@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuitsCase</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            --header-bg-color: #ffffff; /* Light mode header background */
+            --border-color: #e0e0e0; /* Light mode border color */
+            --logo-color: #333333; /* Light mode logo color */
+            --icon-color: #333333; /* Light mode icon color */
+            --badge-bg-color: #ff0000; /* Light mode badge background */
+            --badge-text-color: #ffffff; /* Light mode badge text color */
+            --dropdown-bg-color: #ffffff; /* Light mode dropdown background */
+            --dropdown-text-color: #333333; /* Light mode dropdown text color */
+            --dropdown-item-hover-bg-color: #f0f0f0; /* Light mode dropdown item hover background */
+        }
+
+        body.dark-mode {
+            --header-bg-color: #333333; /* Dark mode header background */
+            --border-color: #444444; /* Dark mode border color */
+            --logo-color: #ffffff; /* Dark mode logo color */
+            --icon-color: #ffffff; /* Dark mode icon color */
+            --badge-bg-color: #ff0000; /* Dark mode badge background */
+            --badge-text-color: #ffffff; /* Dark mode badge text color */
+            --dropdown-bg-color: #444444; /* Dark mode dropdown background */
+            --dropdown-text-color: #ffffff; /* Dark mode dropdown text color */
+            --dropdown-item-hover-bg-color: #555555; /* Dark mode dropdown item hover background */
+        }
+
+        /* Base styles for the header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: var(--header-bg-color);
+            border-bottom: 1px solid var(--border-color);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header .logo {
+            font-size: 1.5rem;
+            color: var(--logo-color);
+            text-decoration: none;
+        }
+
+        .header .header-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .header-icons a {
+            color: var(--icon-color);
+            text-decoration: none;
+            margin-left: 15px;
+            position: relative;
+        }
+
+        .header .header-icons .badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--badge-bg-color);
+            color: var(--badge-text-color);
+            border-radius: 50%;
+            padding: 0 6px;
+            font-size: 0.75rem;
+        }
+
+        /* Dropdown menu styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: var(--dropdown-bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .dropdown-menu.show {
+            display: block;
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 10px 15px;
+            color: var(--dropdown-text-color);
+            text-decoration: none;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--dropdown-item-hover-bg-color);
+        }
+
+        /* Sidebar styles */
+        #sidebar {
+            background-color: #f8f9fa;
+            padding: 15px;
+            width: 250px;
+            min-height: 100vh;
+            position: fixed;
+            top: 60px; /* Adjusted for header height */
+            left: 0;
+            transition: margin-left 0.3s ease;
+        }
+
+        #sidebar .components {
+            padding: 0;
+            list-style: none;
+            margin: 0;
+        }
+
+        #sidebar .components li {
+            margin: 10px 0;
+        }
+
+        #sidebar .components li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        #sidebar .components li a:hover {
+            background-color: #e9ecef;
+        }
+
+        /* Main content styles */
+        main {
+            margin-left: 270px; /* Adjusted for sidebar width */
+            padding: 20px;
+            padding-top: 80px; /* Adjusted for header height */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            #sidebar {
+                width: 100%;
+                top: 0;
+                left: 0;
+                position: relative;
+                min-height: auto;
+                margin-left: 0;
+            }
+
+            main {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">SuitCase</a>
+        <div class="header-icons">
+            <!-- Light/Dark Mode Toggle -->
+            <a href="#" class="mode-toggle" title="Toggle Light/Dark Mode">
+                <i class="material-icons">brightness_6</i>
+            </a>
+
+            <!-- Notifications with Dropdown -->
+            <div class="dropdown notifications" title="Notifications">
+                <a href="#" id="notificationsDropdown" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="material-icons">notifications</i>
+                    <span class="badge">5</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="notificationsDropdown">
+                    <a class="dropdown-item" href="#">New comment on your post</a>
+                    <a class="dropdown-item" href="#">Task deadline approaching</a>
+                    <a class="dropdown-item" href="#">Message from John Doe</a>
+                </div>
+            </div>
+
+            <!-- Messages with Dropdown -->
+            <div class="dropdown messages" title="Messages">
+                <a href="#" id="messagesDropdown" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="material-icons">message</i>
+                    <span class="badge">3</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+                    <a class="dropdown-item" href="#">Meeting request from Jane</a>
+                    <a class="dropdown-item" href="#">New message from Admin</a>
+                    <a class="dropdown-item" href="#">Reminder for upcoming event</a>
+                </div>
+            </div>
+
+            <!-- Profile -->
+            <a href="#" class="profile" title="Profile">
+                <i class="material-icons">account_circle</i>
+            </a>
+
+            <!-- Logout -->
+            <a href="#" class="logout" title="Logout">
+                <i class="material-icons">exit_to_app</i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h4>Menu</h4>
+        </div>
+        <ul class="list-unstyled components">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Matters</a></li>
+            <li><a href="#">Calendar</a></li>
+            <li><a href="#">Tasks and Projects</a></li>
+            <li><a href="#">Contacts</a></li>
+            <li><a href="#">Documents</a></li>
+            <li><a href="#">Billing and Time Tracking</a></li>
+            <li><a href="#">Reporting</a></li>
+            <li><a href="#">Internal Communication</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Welcome to MyLawFirm Dashboard</h1>
+        <p>Your content goes here.</p>
+        <!-- Page-specific content -->
+    </main>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        // Toggle dropdown visibility with animations
+        $('.dropdown-toggle').on('click', function() {
+            $(this).next('.dropdown-menu').toggleClass('show');
+        });
+
+        // Toggle light/dark mode
+        $('.mode-toggle').on('click', function() {
+            $('body').toggleClass('dark-mode');
+        });
+    });
+    </script>
+</body>
+</html>

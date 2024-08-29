@@ -1,0 +1,127 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Suits{% endblock %}</title>
+    <script src="{% static 'js/landing.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha384-+V0h8y8HRU5rhtsIUSK8/P1bU9mM8V50t5hdGj4W0r6FvknnXdzj4+wj58I5Hh6A" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    
+    {% block extra_head %}
+    {% endblock %}
+</head>
+<body class="{% block body_class %}default{% endblock %}">
+<!-- Header Section -->
+<header>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <a href="/" aria-label="Home">
+                    <img src="https://i.ibb.co/NSKBZfr/log-o.png" alt="Suits Logo" class="logo-img" title="Suits Logo">
+                </a>
+                <h1 class="logo-heading">SUITS</h1>
+            </div>
+            <div class="navigation" aria-label="Main Navigation">
+                <ul class="nav-links">
+                    {% if not user.is_authenticated %}
+                        <li><a href="{% url 'userauth:sign-in' %}" id="sign-in" class="nav-link" aria-label="Sign In">Sign In</a></li>
+                        <li><a href="{% url 'userauth:sign-up' %}" id="sign-up" class="nav-link" aria-label="Sign Up">Sign Up</a></li>
+                    {% endif %}
+                </ul>
+                <div class="nav-actions">
+                    <div class="theme-toggle">
+                        <button id="theme-toggle-button" aria-label="Toggle Dark Mode">
+                            <span id="theme-icon" class="material-icons" aria-hidden="true">light_mode</span>
+                        </button>
+                    </div>
+                    <div class="account-menu" aria-label="Account Menu">
+                        <button id="account-icon" class="account-icon" aria-label="Account Menu">
+                            <span class="material-icons" aria-hidden="true">account_circle</span>
+                        </button>
+                        <div id="account-settings" class="dropdown-menu" aria-labelledby="account-icon">
+                            <a href="{% url 'suits:dashboard_page' %}" class="dropdown-item">Dashboard</a>
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'userauth:sign-out' %}" id="sign-out" class="nav-link" aria-label="Sign Out">Sign Out</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="theme-toggle">
+                <button id="theme-toggle-button-mobile" aria-label="Toggle Dark Mode">
+                    <span id="theme-icon-mobile" class="material-icons" aria-hidden="true">light_mode</span>
+                </button>
+            </div>
+            <div class="hamburger-icon" aria-label="Open Mobile Menu">
+                <span class="material-icons">menu</span>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu" aria-labelledby="hamburger-icon">
+        <div class="close-menu" aria-label="Close Menu">
+            <span class="material-icons">close</span>
+        </div>
+        <nav>
+            <ul>
+                {% if not user.is_authenticated %}
+                    <li><a href=
+"{% url 'userauth:sign-in' %}" id="sign-in" class="nav-link" aria-label="Sign In">Sign In</a></li>
+                    <li><a href="{% url 'userauth:sign-up' %}" id="sign-up" class="nav-link" aria-label="Sign Up">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        <div class="account-menu">
+            <button id="account-icon-mobile" class="account-icon" aria-label="Account Menu">
+                <span class="material-icons" aria-hidden="true">account_circle</span>
+            </button>
+            <div id="account-settings-mobile" class="dropdown-menu" aria-labelledby="account-icon-mobile">
+                <a href="{% url 'suits:dashboard_page' %}" class="dropdown-item">Dashboard</a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'userauth:sign-out' %}" id="sign-out" class="nav-link" aria-label="Sign Out">Sign Out</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</header>
+{% block content %}
+{% endblock %}
+ <!-- Footer Section -->
+<footer style="background-color: #0d2028; color: #ffffff; padding: 2rem 1rem; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+            <!-- Footer Left -->
+            <div style="margin-bottom: 1rem;">
+                <p style="font-size: 1.25rem; font-weight: bold; margin: 0;">&copy; 2024 Suits. All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.875rem; margin: 0;">Empowering you with top-notch services and solutions.</p>
+            </div>
+            <!-- Social Media Links -->
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+                <a href="#" target="_blank" title="Facebook" style="color: #0652e1; text-decoration: none; font-size: 1.5rem; transition: color 0.3s;">
+                    <span class="material-icons">facebook</span>
+                </a>
+                <a href="#" target="_blank" title="X" style="color: #e6efee; text-decoration: none; font-size: 1.5rem; transition: color 0.3s;">
+                    <span class="material-icons">X</span>
+                </a>
+            </div>
+        </div>
+        <div id="loader" class="loader-overlay">
+         <div class="loader"></div>
+           </div>  
+        <!-- Footer Bottom -->
+        <div style="margin-top: 2rem; font-size: 0.875rem;">
+            <p>Made with <span style="color: #FF6900;">&hearts;</span> in  NAIROBI</p>
+            <p>For support, email us at <a href="mailto:support@suits.com" style="color: #00D2BD; text-decoration: none; transition: color 0.3s;">support@suits.com</a></p>
+        </div>
+    </div>
+</footer>
+</body>
+</html> 

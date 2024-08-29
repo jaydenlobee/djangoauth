@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suits Legal Panel</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        :root {
+            /* Light Mode Variables */
+            --background-color: #FFFFFF;
+            --text-color: #1D1D1D;
+            --header-background: #A349E8;
+            --header-text: #FFFFFF;
+            --menu-background: #2B2B2B;
+            --menu-text: #EDEDED;
+            --menu-hover: #A349E8;
+            --menu-active-bg: #3D3D3D;
+            --profile-background: #292929;
+            --profile-text: #EDEDED;
+            --dropdown-background: #2B2B2B;
+            --dropdown-text: #FFFFFF;
+            --dropdown-hover: #A349E8;
+            --footer-background: #2B2B2B;
+            --footer-text: #EDEDED;
+            --border-color: #444444;
+        
+            /* Dark Mode Variables */
+            --dark-background-color: #1D1D1D;
+            --dark-text-color: #EDEDED;
+            --dark-header-background: #A349E8;
+            --dark-header-text: #FFFFFF;
+            --dark-menu-background: #2B2B2B;
+            --dark-menu-text: #EDEDED;
+            --dark-menu-hover: #A349E8;
+            --dark-menu-active-bg: #3D3D3D;
+            --dark-profile-background: #292929;
+            --dark-profile-text: #EDEDED;
+            --dark-dropdown-background: #2B2B2B;
+            --dark-dropdown-text: #FFFFFF;
+            --dark-dropdown-hover: #A349E8;
+            --dark-footer-background: #2B2B2B;
+            --dark-footer-text: #EDEDED;
+            --dark-border-color: #444444;
+        }
+        
+        /* Basic reset and global styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: var(--header-background);
+            color: var(--header-text);
+            padding: 10px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+        
+        header h1 {
+            font-size: 2.3rem;
+            font-family: 'Garamond', serif;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin: 0;
+            transition: letter-spacing 0.3s ease, transform 0.3s ease;
+        }
+        
+        header h1:hover {
+            letter-spacing: 2px;
+            transform: scale(1.05);
+        }
+        
+        /* Profile dropdown */
+        .profile-dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            background-color: var(--dropdown-background);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        
+        .profile-dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: var(--dropdown-text);
+        }
+        
+        .profile-dropdown a:hover {
+            background-color: var(--dropdown-hover);
+        }
+        
+        /* Side Menu styles */
+        aside#sidebar {
+            width: 260px;
+            background-color: var(--menu-background);
+            color: var(--menu-text);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            padding: 25px 10px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        
+        aside#sidebar ul#menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            font-family: 'Georgia', serif;
+        }
+        
+        aside#sidebar ul#menu li {
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        aside#sidebar ul#menu li a {
+            color: var(--menu-text);
+            text-decoration: none;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        
+        aside#sidebar ul#menu li:hover {
+            background-color: var(--menu-hover);
+            color: #FFFFFF;
+            transform: translateX(10px) scale(1.05);
+        }
+        
+        aside#sidebar ul#menu li.active {
+            background-color: var(--menu-active-bg);
+            color: var(--menu-hover);
+        }
+        
+        aside#sidebar ul#menu li.active a {
+            color: var(--menu-hover);
+        }
+        
+        aside#sidebar ul#menu li i {
+            margin-right: 15px;
+            font-size: 1.3rem;
+        }
+        
+        /* Main Content styles */
+        main {
+            margin-left: 260px;
+            padding: 40px 30px;
+            flex: 1;
+            background-color: #292929; /* Darker gray for content area */
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-top: 60px; /* Account for fixed header height */
+            transition: background-color 0.3s ease;
+        }
+        
+        main p {
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        
+        main p:hover {
+            color: var(--menu-hover);
+        }
+        
+        /* Footer styles */
+        footer {
+            background-color: var(--footer-background);
+            color: var(--footer-text);
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.7);
+            position: fixed;
+            bottom: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        footer:hover {
+            background-color: var(--menu-hover);
+            color: var(--background-color);
+        }
+        
+        /* Button Styles */
+        button {
+            background-color: #00D2BD; /* Teal button */
+            color: var(--background-color);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Garamond', serif;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        button:hover {
+            background-color: var(--menu-hover);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            aside#sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+                transform: translateY(-100%);
+            }
+        
+            aside#sidebar:hover {
+                transform: translateY(0);
+            }
+        
+            main {
+                margin-left: 0;
+                padding: 20px 15px;
+            }
+        
+            footer {
+                position: static;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+        
+            aside#sidebar ul#menu li {
+                font-size: 1rem;
+                padding: 12px 15px;
+            }
+        
+            main {
+                padding: 15px 10px;
+            }
+        
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+    </style>
+           
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Suits</h1>
+            </div>
+            <div class="header-actions">
+                <button class="screen-toggle" aria-label="Toggle Fullscreen">
+                    <span class="material-icons">fullscreen</span>
+                </button>
+                <button class="notifications" aria-label="Notifications">
+                    <span class="material-icons">notifications</span>
+                    <span class="notification-count">3</span>
+                </button>
+                <button class="profile" aria-label="Profile">
+                    <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+                    <span class="material-icons">arrow_drop_down</span>
+                </button>
+                <div class="profile-dropdown">
+                    <a href="#"><span class="material-icons">account_circle</span> View Profile</a>
+                    <a href="#"><span class="material-icons">settings</span> Account Settings</a>
+                    <a href="#"><span class="material-icons">exit_to_app</span> Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Side Menu -->
+    <aside class="side-menu">
+        <div class="profile-section">
+            <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+            <div class="profile-info">
+                <span class="username">User Name</span>
+                <span class="role">Role Name</span>
+            </div>
+        </div>
+        <nav class="menu-items">
+            <ul>
+                <li><a href="{% url 'suits:dashboard_page' %}"><span class="material-icons">dashboard</span> Dashboard</a></li>
+                <li><a href="{% url 'suits:matters_page' %}"><span class="material-icons">folder</span> Matters</a></li>
+                <li><a href="{% url 'suits:calendar_page' %}"><span class="material-icons">calendar_today</span> Calendar</a></li>
+                <li><a href="{% url 'suits:tasks_projects_page' %}"><span class="material-icons">task_alt</span> Tasks and Projects</a></li>
+                <li><a href="{% url 'suits:contacts_page' %}"><span class="material-icons">contacts</span> Contacts</a></li>
+                <li><a href="{% url 'suits:documents_page' %}"><span class="material-icons">file_copy</span> Documents</a></li>
+                <li><a href="{% url 'suits:billing_time_tracking_page' %}"><span class="material-icons">attach_money</span> Billing and Time Tracking</a></li>
+                <li><a href="{% url 'suits:reporting_page' %}"><span class="material-icons">bar_chart</span> Reporting</a></li>
+                <li><a href="{% url 'suits:internal_communication_page' %}"><span class="material-icons">forum</span> Internal Communication</a></li>
+                <li><a href="{% url 'suits:settings_page' %}"><span class="material-icons">settings</span> Settings</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <div class="content-container">
+            <!-- Main content goes here -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Suits Legal Panel. All rights reserved.</p>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+</body>
+</html>

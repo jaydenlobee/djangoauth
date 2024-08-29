@@ -1,0 +1,1149 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Suits -Your Virtual Lawfirm</title>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="{% static 'images/suit.jpg' %}">
+    <link rel="shortcut icon" href="{% static 'images/suit.jpg' %}">
+   <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-itunes-app" content="app-id=686777370" />
+    <meta name="turbo-cache-control" content="no-cache" />
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="{% csrf_token %}" />
+    <meta name="action-cable-url" content="{{ websocket_url }}">
+    <link rel="apple-touch-icon" href="{% static 'images/suit.jpg' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'images/suit.jpg' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'images/suit.jpg' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'images/suit.jpg' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/suit.jpg' %}">
+    <meta name="google" content="notranslate">
+    <script>
+      if (window.location !== window.top.location) {
+        window.top.location = window.location;
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" media="all" href="https://d1z9ara1acwrvo.cloudfront.net/assets/manage-packs/css/ui-styles-chunk-ac9c9c67e4ed634a32d8f112e1564b64.css" data-turbo-track="reload" />
+<link rel="stylesheet" media="all" href="https://d1z9ara1acwrvo.cloudfront.net/assets/manage-packs/css/commons-chunk-bb8b2facfc74f5aed67fb736c1eecf4e.css" data-turbo-track="reload" />
+<link rel="stylesheet" media="all" href="https://d1z9ara1acwrvo.cloudfront.net/assets/manage-packs/css/main-chunk-01e7b3390885a558f1d7a3b890cf1ea9.css" data-turbo-track="reload" />
+    <link rel="stylesheet" media="all" href="https://d1z9ara1acwrvo.cloudfront.net/assets/manage-application-next-90783b8df545196b71000d46b2bd8ef4f38a97311ba7417717940d322c40964c.css" data-turbo-track="reload" />
+<link rel="stylesheet" media="all" href="https://d1z9ara1acwrvo.cloudfront.net/assets/pendo-d1c7c8c8d5f201cc637f408a845fb9de71bece7ec8f530845e9f4f8e36326c68.css" data-turbo-track="reload" />
+    <link rel="stylesheet" media="all" href="https://d1z9ara1acwrvo.cloudfront.net/assets/froala-editor-ddf7b3a7ed31cecb69bdd6f081db7dca6c970548d2b33566bb2d963dc3344cb5.css" data-turbo-track="reload" />
+
+
+    <script>
+//<![CDATA[
+window.ThemisState={};ThemisState.momentFormats={"date":"MM/DD/YYYY","time":"h:mm A","datetime":"MM/DD/YYYY h:mm A","timezone":"America/Los_Angeles"};ThemisState.currencyLocale="£";ThemisState.currencyName="GBP";ThemisState.isTieredPricingEnabled=true;ThemisState.region="eu";ThemisState.shouldShowUpgradeLink=true;ThemisState.accountData={"id":809312363,"account_group_id":527411,"primary_subscriber_email":"jaydenlobee@gmail.com","state":"trial","country":null,"website":null,"has_billable_activities":false,"phone":"+254 111259755","stripe_key":"pk_live_bJlCK2GM7Zwy6PnaH6pH9ZTG","stripe_version":"2020-03-02","use_utbms_codes":false,"use_custom_matter_numbering":false,"default_matter_template_id":null,"created_at":"2024-08-24T14:46:02-07:00","first_purchased_at":null,"microsoft_teams_enabled":false,"number_format":"en","xero_lock_date":null,"xero_sync_enabled":false,"xero_hard_cost_sync_enabled":null,"text_notification_enabled":null,"texting_number":null,"client_reminders_enabled":null,"client_reminder_window_in_days":null,"toll_free_verification_status":"incomplete","is_toll_free_verification_overdue":true,"subscription":{"active_access_window":{"expires_at":null},"collection_method":null,"has_converted":false,"pricing_plan":"premium","region_name":"US","current_billing_period_start_at":"2024-08-31T14:48:35-07:00","current_user_count":1,"credit_card_description":null,"credit_card_expiry":null},"use_sales_demo_account":false,"account_name":"Jayden Lobee Legal","account_logo_url":null,"dropbox_address":"6b3b05469@maildrop.clio.eu","billing_settings":{"bill_sharing_pdf_attachment_enabled":false,"currency":"GBP","qbo_aggregate_taxes":null,"secondary_tax_rate":0.0,"secondary_tax_rate_display":0.0,"tax_rate":0.0,"tax_rate_display":0.0,"time_on_flat_rate_contingency_matters_is_non_billable":true,"use_secondary_tax":null,"originating_attorney_allocation":0,"responsible_attorney_allocation":0},"compliance_settings":{"matter_protected_funds":false,"new_south_wales_rules":false,"outside_uki_kyc_opt_in":false,"uki_kyc_opt_out":false,"ldwt_enabled":false},"current_user":{"avatar":{"url":""},"email":"jaydenlobee@gmail.com","email_signature":null,"name":"Jayden Lobee","first_name":"Jayden","last_name":"Lobee","show_nps_survey":false,"locale":"en-GB","country":null,"has_practice":false,"initials":"JL","id":288026,"timer_running":false,"created_at":"2024-08-24T14:46:09-07:00","group_ids":[527411,527414],"user_group_id":527414,"enable_text_snippets":true,"show_email_confirmation_modal":false,"is_migrated_to_identity":true,"is_identity_migration_complete":true,"is_primary_subscriber":true,"two_factor_enabled":false,"is_grow_integration_connected":false,"microsoft_graph_calendar":{"state":null,"connected_account":null},"microsoft_graph_contacts":{"state":null,"connected_account":null},"banners":{"check_printing":{"convert_admin":true,"convert_non_admin":true,"convert_disabled_qbo":true,"convert_disabled_qbo_non_admin":true,"enabled_instruction":true,"sync_other_account":true},"collect_business_address":{"show":false},"collect_practice_area":{"show":false},"custom_field_convert":true,"disabled_email_banner":{"show":false},"secure_message_rename":true,"impersonation":{"show_banner":false,"target_user_name":"Jayden Lobee"},"password_expiry_migration":{"show":false},"form_1099k_notification":{"show":false},"apply_trust_notification":true,"clio_payments_message":true,"clio_payments_custom_payment_methods_payment_link_options":true,"trust_reconciliation_banner":null},"calendar":{"default_view":"week","sort_order":"default","default_calendar_id":292292,"sync_status":{"google_provider_status":null,"office365_provider_status":null},"zoom_authenticated":false},"contact_sync_connected":false,"view_rates":"All","custom_actions":{},"email_provider":null,"gmail_personalization_authenticated":false,"permissions":{"can_see":{"clio_payments_application_form":false,"clio_payments_reports":false,"conference_meetings_integration_staged_rollout_enabled":true,"firm_feed":true,"matters_firm_feed":true,"payment_plans":false,"payments_signin_modal":false,"rates_any":true,"rates_other":true,"rates_self":true,"online_payment_reports":false,"activity_hours_all":true,"payment_method_request":false},"has_role":{"accounts":true,"admin":true,"billings":true,"reports":true},"has_capability":{"report_schedules_view":true,"report_schedules_create":true,"report_schedules_edit":true,"report_schedules_delete":true,"matters_administer_stages":true,"matters_administer_templates":true,"matters_block_users":true,"matters_bulk_delete":true,"matters_bulk_edit":true,"matters_manage_billing_preferences":true,"matters_view_all":true,"report_presets_view":true,"report_presets_create":true,"report_presets_edit":true,"report_presets_delete":true,"bills_create":true,"bills_view":true,"bills_edit":true,"bills_bulk_edit":true,"bills_bulk_delete":true,"bills_delete":true,"bills_export":true,"bills_share":true,"bills_record_payment":true,"bills_manage_trust_requests":true,"bills_edit_billed_items":true,"reports_view":true,"reports_download":true,"reports_create":true,"settings_manage_court_rules":true,"settings_manage_firm":true,"settings_manage_users":true,"settings_manage_grants":true,"settings_manage_custom_fields":true,"settings_manage_billing":true,"settings_manage_billing_expenses":true,"settings_manage_documents":true,"settings_manage_bill_syncs":true,"settings_manage_matter_numbering":true,"payments_manage_plans":true,"payments_create_charge":true,"payments_administer_merchant_accounts":true,"payments_signup":true,"payments_view_tax_forms":true,"payments_manage_clio_payments":true,"transactions_view":true,"transactions_edit":true,"transactions_export":true,"transactions_manage":true,"transactions_manage_trusts":true,"accounts_view":true,"accounts_create":true,"accounts_edit":true,"accounts_delete":true,"accounts_export":true,"accounts_manage_transactions":true,"accounts_view_bank_accounts":true,"users_view_all":true,"users_edit":true,"users_edit_rate":true,"users_edit_role":true,"activities_view_all_categories":true,"activities_bulk_edit":true,"activities_manage":"all","data_migrations_manage_imports":true,"calendars_manage_all_calendars":true,"tasks_manage_tasks":true,"tasks_bulk_edit":true,"tasks_bulk_delete":true,"dashboard_view_firm":true,"dashboard_view_all_financial_metrics":true,"contacts_bulk_delete":true},"can_use":{"abusive_email_behavior_override":false,"accounting_internal":false,"accounting_syncs":true,"accounting_v2":false,"accounts_section":true,"ach_only":false,"activate_new_quick_bill":false,"activities_restriction_capability":false,"activity_write_offs":false,"add_responsible_attorney_to_matter_balance_csv":false,"advanced_reports":true,"advanced_stripe_activation":false,"advanced_tasks":true,"allow_nsw_compliance_settings_to_be_disabled":false,"allow_nsw_trust_payment_reversal":false,"allow_nsw_trust_to_operating_transfer_reversal":false,"ambassador_settings":false,"anticipated_disbursements":false,"anticipated_disbursements_dev":false,"apollo_activities":true,"apollo_calendar":true,"apollo_integrations":true,"apollo_integrations_v2":true,"apolloized_court_rule_creation_milestone1":false,"async_pdf_generation":false,"attorney_allocations":true,"audit_log":false,"auto_trust":true,"automated_bill_reminders":true,"bank_transactions_v2":false,"billing_rate_report":true,"billing_reports":true,"billing_service":false,"billing_section":true,"bookkeeping_events":false,"brightback_cancellation":false,"bulk_bill_enhancement":false,"bulk_user_import":false,"c4c_lawpay":false,"calendar_event_level_errors":true,"cbs_migration_allowed":true,"cbs_user_impersonation":false,"client_experience_app":true,"client_reports":true,"clio_assistant":false,"clio_connect":true,"clio_duo_development":false,"clio_duo_internal":false,"clio_file_multiple_filings_per_submission":false,"clio_for_co_counsel":false,"clio_payments":false,"clio_payments_bank_payment_no_verification":false,"clio_payments_debit_experiment":false,"clio_payments_debit_prioritization":true,"clio_payments_hosted_migrations":false,"clio_payments_hosted_onboarding":false,"clio_payments_migration":false,"clio_payments_price_change":true,"clio_payments_section":false,"column_picker_for_reports":true,"communications_refresh":false,"communications_v2":false,"communications_v2_client_portal_detail_pane":false,"communications_v2_internal_message_detail_pane":false,"communications_v2_log_detail_pane":false,"communications_v2_log_dialog":false,"communications_v2_text_message_detail_pane":false,"compliance_reports_nsw":true,"conference_meetings_integration":true,"contact_deduplication_review_tool":true,"contact_sync_opt_in_flow":false,"contact_sync_send_kafka_messages_create_update":false,"contact_tags_development":false,"contacts_visibility":false,"contingency_fee":true,"court_rules":false,"custom_fields":true,"custom_reports_pilot":false,"customizable_matter_dashboard":false,"dashboard_firm":true,"default_time_entry_no_charge":false,"deprecate_clio_dialpad_integration":false,"dialpad_integration":true,"disabled_c4_cc_user_contact_email":false,"discount_services_only":false,"document_automation":true,"document_contents_search":true,"document_details_hot_wire_feature_flag":true,"document_hs_esignature_low_limit":false,"document_hs_esignature_mid_limit":false,"document_summarization":false,"document_summarization_from_details_page":false,"documents_clio_drive":false,"document_hs_esignature":true,"document_metadata":false,"documents_lawyaw_integration":false,"documents_lawyaw_on_demand":false,"dps_precedent_search":false,"drive_action_logs":false,"duo_guardrails":false,"duo_rag":false,"edit_app_listing":false,"efiling_integration":false,"efiling_state_expansion_registration":false,"elasticsearch_for_list_view":false,"elite_court_rules":false,"email_log_reviews":false,"email_templates":false,"embed_link_and_qr_code_on_bills":false,"embedded_apps":true,"enable_excel_report":true,"enable_reconciliation_voiding_nsw":false,"es_for_activity_query_service":false,"event_stream_database_writes":true,"evergreen_retainers":true,"expense_v2":true,"external_application_links":true,"external_sync_calendar_broken_banner":true,"fetch_unbounded_calendar_entries":false,"first_party_app_integration_flows":false,"full_text_search":true,"google_my_business_instant_verification":true,"google_oauth_granular_consent":false,"grow_apps_in_developer_portal":false,"hard_and_soft_cost_expenses":true,"import_hard_costs":true,"increase_pagination_for_billable_matters":false,"input_date_hack":false,"insights_internal":false,"installments_billing_cycles":false,"internal_notifications_external_api":false,"lawpay_kyc_migration":false,"legal_aid_us":false,"legal_aid_us_and_hide_for_profit_features":false,"legal_aid_us_financial_eligibility_reporting":false,"legal_aid_us_matters_dashboard":false,"legal_aid_us_personal_dashboard":false,"legal_aid_us_dashboards":false,"legal_aid_us_reports":false,"legal_aid_us_pai_hide_non_billable":false,"legal_aid_us_permissions":false,"limit_activity_aggregation":true,"link_disbursements_with_transactions":false,"lsa_report":false,"mandatory_activity_descriptions":false,"marketing_channel":false,"matter_budgets":true,"matter_client_dual_write":false,"matter_productivity_report":true,"matter_stages":true,"matter_stages_mobile":true,"matter_stages_upsell_page":false,"matter_team_permissions_restricted_groups":false,"microsoft_365_calendar":true,"microsoft_365_contacts":true,"microsoft_documents_sync":true,"microsoft_graph_calendar":false,"microsoft_graph_contacts":false,"microsoft_graph_unified_page":false,"microsoft_teams":true,"mobile_tap_to_pay":false,"multi_client_matters_ui":false,"multi_matter_bills_filtering":true,"multiple_contingency_fee":true,"multiple_matter_templates":true,"new_bill_experiment":false,"new_xero_settings_ui":false,"new_bills_settings_ui":false,"nsw_bulk_apply_trust":false,"nsw_landscape_reconciliations":false,"o365_calendar_import_by_week":false,"obfuscated_launcher_urls":true,"originating_attorney_report":true,"outlook_add_in_development":false,"outlook_email_bulk_filing":false,"payment_allocation_settings":true,"payment_method_migration":false,"paywall_features":false,"pdf_assembly":false,"pendo":true,"pendo_guides":true,"personal_injury_add_on":false,"personal_injury_add_on_product_growth":false,"personal_injury_referral_fees":false,"practice_area_backfill":false,"practice_area_capture":true,"practice_area_settings_categories":false,"priority_support":true,"product_growth_experiment":false,"product_workflow_automations_m2":false,"productivity_report_add_resp_attorney":false,"qbo_import_check_number":true,"qbo_inline_tax":false,"qbo_multi_trust_account_sync":true,"qbo_tax_override":true,"realization_report":true,"recalculate_court_rules_calendar_entry":true,"remove_controlled_money_from_trust_balance":false,"revenue_reports":true,"safe_custody":false,"sales_force_chat":false,"save_settlement_to_docs":false,"scheduled_preset_reports":true,"settlement_esignature":false,"shared_contacts_improved_onboarding":false,"split_fee_invoicing":true,"super_court_rules":false,"sync_re_authorization_banner":true,"tags_sync_with_grow":false,"text_messages":false,"text_messages_feature":false,"third_party_integrations":true,"trial_email_override":false,"trust_requests":true,"trust_reconciliation":true,"trust_reconciliation_allow_difference":null,"updated_fee_allocation_report_columns":false,"uk_compliance_guardrails":false,"utbms":true,"workflow_automation_mvp":false,"workflow_builder_ui":false,"xero_bill_bi_directional_sync":false,"xero_hard_cost_tax_syncing":false,"xero_sync_void_deleted_bills":false,"xero_two_factor":true,"bank_account_connection_verification":true}},"clio_payments":{"account_suspended":false,"accepted_payment_methods":"all_methods","account_disabled_without_reactivation":null,"active":false,"active_with_mappings":{"operating":false,"trust":false},"are_bank_account_connections_available":false,"currency_symbol":null,"disabled_credit_card_brands":null,"echeck_permitted":false,"echeck_logo_visible_for_onboarding":false,"debit_logo_visible_for_onboarding":false,"discover_logo_visible_for_onboarding":true,"enabled_without_mappings":false,"fee_schedule":"","fee_schedule_permitted":false,"fees":null,"has_awaiting_payment_invoices":false,"hosted_onboarding_permitted":false,"last_signup_date":null,"lawpay_public_key":null,"locale":null,"migration_completed_at":null,"migration_payment_method_migration_status":null,"migration_in_progress":null,"migration_status":null,"migration_requires_user_activation":false,"migration_payment_data_transfer_enabled":false,"migration_perform_at_off_hours":null,"onboard_to_new_provider":true,"pad_consent_update_required":false,"permissions":{"can_create_trust_charge":null,"trust_refunds_permitted":false,"can_create_digital_wallet_payments":false,"can_connect_bank_accounts_post_hosted_onboarding":false,"can_see_kyc_updates":true},"processing_currency":null,"provider":"stripe","provider_activation_date":null,"provider_api_version":null,"requires_1099k":false,"requires_micro_deposit_verification":false,"requires_client_action_on_card":false,"requires_bank_account_details_overwrite":false,"requires_pad":false,"clio_payments_region":null,"show_payment_plan_compliance_notification":false,"show_surcharging_amounts":false,"signup_approved":null,"signup_in_progress":null,"signup_pending":null,"update_payment_method_for_payment_plan_permitted":true,"use_authorization_code":false,"use_ach_only":false,"use_surcharging":false},"notification_methods":[{"id":576818,"type":"Email","is_default_email_address":true},{"id":576821,"type":"Popup"}],"hello_sign_terms_accepted":false,"two_factor_policy":{"compliant":true,"show_notification":false},"contacts_visibility":"all","text_messages":{"badge_notification_enabled":true},"period_until_password_expiry":"","authentication_token":"038-312-726-2888","authentication_token_expiry":"2024-08-26T09:15:55-07:00","clio_payments_enablement_wizard":false,"practice_area_backfill":null},"experiments":{},"external_document_settings":{"default_source":"Documents","enabled_sources":[]},"document_preview_setting":{"enabled":false},"documents_lawyaw_config":{"base_uri":"https://app.lawyaw.com"},"kyc_fields_config":null,"legal_aid_uk_config":null,"two_factor_policy":{"applicable":false,"compliant":true,"show_notification":false},"quickbooks":{"disbursement_sync_enabled":null,"enabled":null,"trust_sync_bank_account_id":null,"trust_sync_bank_account_ids":null,"trust_sync_enabled":null},"enabled_clio_file_states":[],"report_categories":[{"title":"reports.dashboard.billing.title","description":"reports.dashboard.billing.description","icon":"money-bill-1","learn_more_href":"reports.dashboard.billing.learn_more_href","name":"billing","reports":[{"title":"reports.dashboard.billing.accounts_receivable.title","description":"reports.dashboard.billing.accounts_receivable.description","kind":"accounts_receivable"},{"title":"reports.dashboard.billing.accounts_receivable_aging.title","description":"reports.dashboard.billing.accounts_receivable_aging.description","kind":"accounts_receivable_aging"},{"title":"reports.dashboard.billing.billing_history.title","description":"reports.dashboard.billing.billing_history.description","kind":"billing_history"},{"title":"reports.dashboard.billing.matter_balance_summary.title","description":"reports.dashboard.billing.matter_balance_summary.description","kind":"matter_balance_summary"},{"title":"reports.dashboard.billing.invoice_payments.title","description":"reports.dashboard.billing.invoice_payments.description","kind":"invoice_payments_v2"}]},{"title":"reports.dashboard.client.title","description":"reports.dashboard.client.description","icon":"user","learn_more_href":"reports.dashboard.client.learn_more_href","name":"client","reports":[{"title":"reports.dashboard.client.client_activity.title","description":"reports.dashboard.client.client_activity.description","kind":"client_activity"},{"title":"reports.dashboard.client.client_ledger.title","description":"reports.dashboard.client.client_ledger.description","kind":"client_ledger"},{"title":"reports.dashboard.client.trust_ledger.title","description":"reports.dashboard.client.trust_ledger.description","kind":"trust_ledger"},{"title":"reports.dashboard.client.trust_management.title","description":"reports.dashboard.client.trust_management.description","kind":"trust_management"},{"title":"reports.dashboard.client.trust_listing.title","description":"reports.dashboard.client.trust_listing.description","kind":"trust_listing"},{"title":"reports.dashboard.client.work_in_progress.title","description":"reports.dashboard.client.work_in_progress.description","kind":"work_in_progress"},{"title":"reports.dashboard.client.bank_account_activity.title","description":"reports.dashboard.client.bank_account_activity.description","kind":"bank_account_activity"}]},{"title":"reports.dashboard.matter.title","icon":"briefcase","learn_more_href":"reports.dashboard.matter.learn_more_href","name":"matter","reports":[{"title":"reports.dashboard.matter.matters.title","description":"reports.dashboard.matter.matters.description","kind":"matter"},{"title":"reports.dashboard.matter.matters_grouped_by.title","description":"reports.dashboard.matter.matters_grouped_by.description","kind":"matters_by_responsible_attorney"},{"title":"reports.dashboard.matter.contact_information.title","description":"reports.dashboard.matter.contact_information.description","kind":"contact_information"},{"title":"reports.dashboard.matter.billing_rate.title","description":"reports.dashboard.matter.billing_rate.description","kind":"billing_rate"}]},{"title":"reports.dashboard.productivity.title","description":"reports.dashboard.productivity.description","icon":"circle-check","learn_more_href":"reports.dashboard.productivity.learn_more_href","name":"productivity","reports":[{"title":"reports.dashboard.productivity.productivity_by_client.title","description":"reports.dashboard.productivity.productivity_by_client.description","kind":"productivity_by_client"},{"title":"reports.dashboard.productivity.productivity_by_user.title","description":"reports.dashboard.productivity.productivity_by_user.description","kind":"productivity_by_user"},{"title":"reports.dashboard.productivity.matter_productivity_by_user.title","description":"reports.dashboard.productivity.matter_productivity_by_user.description","kind":"matter_productivity_by_user"},{"title":"reports.dashboard.productivity.realization.title","description":"reports.dashboard.productivity.realization.description","kind":"realization"}]},{"title":"reports.dashboard.task.title","description":"reports.dashboard.task.description","icon":"list","learn_more_href":"reports.dashboard.task.learn_more_href","name":"task","reports":[{"title":"reports.dashboard.task.progress_by_user.title","description":"reports.dashboard.task.progress_by_user.description","kind":"task_progress_by_user"},{"title":"reports.dashboard.task.productivity_by_user.title","description":"reports.dashboard.task.productivity_by_user.description","kind":"task_productivity_by_user"}]},{"title":"reports.dashboard.revenue.title","description":"reports.dashboard.revenue.description","icon":"chart-column","learn_more_href":"reports.dashboard.revenue.learn_more_href","name":"revenue","reports":[{"title":"reports.dashboard.revenue.revenue.title","description":"reports.dashboard.revenue.revenue.description","kind":"revenue"},{"title":"reports.dashboard.revenue.originating_attorney.title","description":"reports.dashboard.revenue.originating_attorney.description","kind":"originating_attorney_revenue"},{"title":"reports.dashboard.revenue.fee_allocation.title","description":"reports.dashboard.revenue.fee_allocation.description","kind":"fee_allocation"}]}],"manage_bank_account_exists":false,"manage_payout_account_mapped":false,"matter_number_update_default":false,"contact_requires_sales_tax_number":false,"business_address":{"address":null,"city":null,"postal_code":null,"province":null}};ThemisState.killSwitches={};ThemisState.rollouts={"async_pdf_generation_rollout":false,"contact_tags_rollout":false,"customizable_matter_dashboard_rollout":false,"microsoft_graph_release_rollout":true,"mandatory_activity_descriptions":false,"default_time_entry_no_charge":false,"personal_injury_referral_fees_rollout":false,"safe_custody":false,"settlement_esignature_rollout":false,"save_settlement_to_docs_rollout":false,"deprecate_clio_dialpad_integration":false,"duo_rag_rollout":false,"bulk_action_job_status":false};ThemisState.l10n={"labels":{"responsible_attorney":"Responsible Solicitor","originating_attorney":"Originating Solicitor"}};ThemisState.segmentAnalyticsData={"config":{"writeKey":"RoTJ4POjKswG6gO25IiqJrVkbyh40fgZ"},"properties":{"clio_zone":"1","clio_rendered_at":"2024-08-26T15:20:06.196Z","clio_request_id":"d19ede22-d5d2-4c3d-ac3c-62556346b4c1","title":"","clio_login_id":"265286","clio_user_id":"288026","clio_account_id":"809312363","clio_account_state":"trial","apollo":true},"options":{"integrations":{"All":false,"ChurnZero":true},"context":{"ip":"0.0.0.0","page":{"title":""}}},"events":{"communications_refresh":true}};ThemisState.poller={"frequency_in_seconds":300};ThemisState.appVersion="1cea4ab2388b5d7adca11d7d242fe310c1ca02c7";ThemisState.environment="production-eu";ThemisState.salesForceRep={};ThemisState.daysRemainingInTrial=5;ThemisState.hasSubscription=false;ThemisState.trialData={"can_subscribe":true,"days_remaining_in_trial":5,"missing_firm_name":true,"tiered_pricing_enabled":true};ThemisState.user={"roles":{"admin":true}};ThemisState.hideSidebar=false;
+//]]>
+</script>
+    <script src="https://d1z9ara1acwrvo.cloudfront.net/assets/en-GB-i18n-ecd4082d4f1cd73010a866e57d29909916ec7b7c3bce79fc3b9d7806e4acf18b.js" defer="defer"></script>
+    <script src="https://d1z9ara1acwrvo.cloudfront.net/assets/jquery-base-lib-f14d37810c87bf6a18d5a168baf55857bfb1437037ffd96a03cafb56c6a662e1.js" defer="defer"></script>
+    <script src="https://d1z9ara1acwrvo.cloudfront.net/assets/froala-editor-035a7afbaae6631e454f7ae16151d2363dccb778a1ead4c63ed45e9feb68439f.js" defer="defer"></script>
+
+
+    <script src="https://js.stripe.com/v3/" defer="defer"></script>
+    <script src="https://d1z9ara1acwrvo.cloudfront.net/assets/manage-packs/runtime-1c18ddb2d5874222e0a24432581316e4.js" defer="defer" data-turbo-track="reload"></script>
+<script src="https://d1z9ara1acwrvo.cloudfront.net/assets/manage-packs/commons-098ffd9e49024f661279b86ae1fb3036.js" defer="defer" data-turbo-track="reload"></script>
+<script src="https://d1z9ara1acwrvo.cloudfront.net/assets/manage-packs/datadog-rum-f54a3429397273ceb95db6a9dc310134.js" defer="defer" data-turbo-track="reload"></script>
+<script src="https://d1z9ara1acwrvo.cloudfront.net/assets/manage-packs/bugsnag-client-e66118b779f9b90bd2b6b51bf403040b.js" defer="defer" data-turbo-track="reload"></script>
+<script src="https://d1z9ara1acwrvo.cloudfront.net/assets/manage-packs/22-2d1d0f6eb313e5b535065aa939227ec8.js" defer="defer" data-turbo-track="reload"></script>
+<script src="https://d1z9ara1acwrvo.cloudfront.net/assets/manage-packs/polyfills-f70de76a64291048b547962772848742.js" defer="defer" data-turbo-track="reload"></script>
+<script src="https://d1z9ara1acwrvo.cloudfront.net/assets/manage-packs/21-32105cce5e1d56e084565196789c3e13.js" defer="defer" data-turbo-track="reload"></script>
+<script src="https://d1z9ara1acwrvo.cloudfront.net/assets/manage-packs/main-81ae19b90393be4759dec5926fc4d42a.js" defer="defer" data-turbo-track="reload"></script>
+    <script src="https://d1z9ara1acwrvo.cloudfront.net/assets/manage-angularjs-bootstrap-39b38c370a5ed2b61d4cbffe145a4e855f3c6b236c6d564871b685b965b07d90.js" defer="defer" data-turbo-track="reload"></script>
+    <script src="https://d1z9ara1acwrvo.cloudfront.net/assets/manage-application-next-3a351917baf29b5ac7fa1b8f8b946515fa7f5c1ac5445b30364a49ebc91b29d7.js" defer="defer" data-turbo-track="reload"></script>
+    <script src="https://d1z9ara1acwrvo.cloudfront.net/assets/manage-stripe-turbo-handler-b73d85ad93b9c9cfa1298be9dbaf3ae6301e5c3856674c1cea6a3b1a84b53f55.js" defer="defer" data-turbo-track="reload"></script>
+    <script src="https://d1z9ara1acwrvo.cloudfront.net/assets/manage-link-click-observer-5281ec29499bef327f5afd4a1ca7f1890ad221bfa2586be6bda11f39dea03f28.js" defer="defer" data-turbo-track="reload"></script>
+
+    
+<script type="text/javascript">
+  window.addEventListener('DOMContentLoaded', function() {
+    if (!window.analyticsHaveBeenInitialized) {
+      window.analyticsHaveBeenInitialized = true;
+      window.analytics = window.analytics || [];
+      window.analytics.methods = ["identify", "group", "track", "page", "pageview", "alias", "ready", "on", "once", "off", "trackLink", "trackForm", "trackClick", "trackSubmit"];
+      window.analytics.factory = function(t) {
+        return function() {
+          var a = Array.prototype.slice.call(arguments);
+          return a.unshift(t), window.analytics.push(a), window.analytics;
+        };
+      };
+      for (var i = 0; i < window.analytics.methods.length; i++) {
+        var key = window.analytics.methods[i];
+        window.analytics[key] = window.analytics.factory(key);
+      }
+      window.analytics.load = function(t) {
+        if (!document.getElementById("analytics-js")) {
+          var a = document.createElement("script");
+          a.type = "text/javascript";
+          a.id = "analytics-js";
+          a.async = true;
+          a.src = ("https:" === document.location.protocol ? "https://" : "http://") + "cdn.segment.com/analytics.js/v1/" + t + "/analytics.min.js";
+          var n = document.getElementsByTagName("script")[0];
+          n.parentNode.insertBefore(a, n);
+        }
+      };
+      window.analytics.SNIPPET_VERSION = "2.0.9";
+
+      window.analytics.load("RoTJ4POjKswG6gO25IiqJrVkbyh40fgZ");
+
+      window.segment = {};
+      window.segment.pageViewId = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
+
+      (function() {
+        var userId = "1-288026";
+        var userTraits = {
+          "suits_zone": "1",
+          "suits_login_id": "265286",
+          "suits_user_id": "288026",
+          "suits_account_id": "809312363",
+          "suits_account_state": "trial"
+        };
+        if (userId) {
+          analytics.identify(userId, userTraits, { context: { ip: '0.0.0.0', page: { title: '' } } });
+        }
+
+        var groupId = "1-809312363";
+        var groupTraits = {
+          "suits_zone": "1",
+          "suits_account_id": "809312363"
+        };
+        if (groupId) {
+          analytics.group(groupId, groupTraits, { context: { ip: '0.0.0.0', page: { title: '' } } });
+        }
+
+        var pageProperties = {
+          "suits_zone": "1",
+          "suits_rendered_at": "2024-08-26T15:20:06.212Z",
+          "suits_request_id": "d19ede22-d5d2-4c3d-ac3c-62556346b4c1",
+          "title": "",
+          "suits_login_id": "265286",
+          "suits_user_id": "288026",
+          "suits_account_id": "809312363",
+          "suits_account_state": "trial",
+          "apollo": true
+        };
+        var pageName = null;
+        pageProperties["suits_pageViewId"] = segment.pageViewId;
+
+        var skipSegmentPageCall = true;
+
+        if (!(typeof ThemisState !== "undefined" && ThemisState.disableLegacyTracking)
+          && !skipSegmentPageCall) {
+          analytics.page(pageName, null, pageProperties);
+        }
+
+        if (typeof ThemisState !== "undefined" && ThemisState.trackingEvent) {
+          analytics.track(ThemisState.trackingEvent);
+        }
+      })();
+    } else {
+      if (!!window.clioLogger) {
+        window.clioLogger.error("segment/_tag.html.erb called after already being initialized");
+      }
+    }
+  });
+</script>
+      
+      <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8GH42ZRSEZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8GH42ZRSEZ');
+
+    const ViewportHelpers = (function() {
+
+      function viewportWidth() {
+        return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+      }
+
+      function viewportHeight() {
+        return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+      }
+
+      function viewportDimensions() {
+        var dimensions = viewportWidth() + "x" + viewportHeight();
+        return dimensions;
+      }
+
+      return {
+        viewportWidth: viewportWidth,
+        viewportHeight: viewportHeight,
+        viewportDimensions: viewportDimensions
+      }
+    })();
+
+    gtag('event','viewport', {
+      "width": ViewportHelpers.viewportWidth(),
+      "height": ViewportHelpers.viewportHeight(),
+      "dimensions": ViewportHelpers.viewportDimensions()
+    });
+  </script>
+
+      <script src="https://d1z9ara1acwrvo.cloudfront.net/javascripts/pendo/init.js" defer="defer"></script>
+
+
+      <script type="text/javascript">
+  function initEmbeddedMessaging() {
+    try {
+      embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+      embeddedservice_bootstrap.init(
+        "00DA0000000YlrX",
+        "Front_Line_Agent",
+        "https://themis-solutions.my.site.com/ESWFrontLineAgent1724081212741",
+        {
+          scrt2URL: "https://themis-solutions.my.salesforce-scrt.com"
+        }
+      );
+    } catch (err) {
+      console.error('Error loading Embedded Messaging: ', err);
+    }
+  };
+
+  window.addEventListener('load', function() {
+    var script = document.createElement('script');
+    script.src = 'https://themis-solutions.my.site.com/ESWFrontLineAgent1724081212741/assets/js/bootstrap.min.js';
+    script.onload = initEmbeddedMessaging;
+    document.head.appendChild(script);
+  });
+
+  window.addEventListener("onEmbeddedMessagingReady", () => {
+    console.log("Received the onEmbeddedMessagingReady event.");
+    // Setup the AppName field
+    embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+      AppName: "Manage"
+    });
+
+    // Send your identity token to Salesforce
+    embeddedservice_bootstrap.userVerificationAPI.setIdentityToken({
+      identityTokenType: "JWT",
+      identityToken: "eyJ0eXAiOiJKV1QiLCJraWQiOiI3NWM1ZGM5M2Q4OWEwYmM3NTY3MTgxZDVkYTZlYTk1ZGU5Y2VmYTExYmM0ZDUzMTU0YjM5ODRmZTk2MTNiMDljIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJDbGlvTWFuYWdlIiwic3ViIjoiMjQyMGQ5NmM5NDM0ZjAzOGZiMTE2N2FjMTAyZDEyMDciLCJleHAiOjE3MjQ2ODkyMDZ9.J_tYoNwFBay3lwbcnsxEqNZht3QErfGZscuDr1yRqsDJ_2s01d7v2ZhiAcNJ2RB5EbYmj_cbBJngAVcSlCkadbj8_dfmRonlZ2uV5IGYqSDg2vloQLZvoAysP0Ce3fjHniEiMLTjzzjHqJslUJ-z0y_zt8nFku4hDAAcvREYOKDEbaLMEaijCQh4qXzdgdG9JgbUpNtOfQxqUnGu_yoZzh7Tnux_rJL6o2R6TIX-jbjP8nRUvgczUqVUS9PwahnlbehjpkM7crcZwdSTiJHK7z_KHbHJpjByf87ij0hFzYPOPx1LUSRS64ab4uwRNiQmQ9qSj8A87d_FUjM5z3j9aA",
+    });
+  });
+
+  window.addEventListener("onEmbeddedMessagingIdentityTokenExpired", () => {
+    console.log("Received the onEmbeddedMessagingIdentityTokenExpired event.");
+    // Refresh the identity token and send it to Salesforce.
+    embeddedservice_bootstrap.userVerificationAPI.setIdentityToken({
+      identityTokenType: "JWT",
+      identityToken: "eyJ0eXAiOiJKV1QiLCJraWQiOiI3NWM1ZGM5M2Q4OWEwYmM3NTY3MTgxZDVkYTZlYTk1ZGU5Y2VmYTExYmM0ZDUzMTU0YjM5ODRmZTk2MTNiMDljIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJDbGlvTWFuYWdlIiwic3ViIjoiMjQyMGQ5NmM5NDM0ZjAzOGZiMTE2N2FjMTAyZDEyMDciLCJleHAiOjE3MjQ2ODkyMDZ9.J_tYoNwFBay3lwbcnsxEqNZht3QErfGZscuDr1yRqsDJ_2s01d7v2ZhiAcNJ2RB5EbYmj_cbBJngAVcSlCkadbj8_dfmRonlZ2uV5IGYqSDg2vloQLZvoAysP0Ce3fjHniEiMLTjzzjHqJslUJ-z0y_zt8nFku4hDAAcvREYOKDEbaLMEaijCQh4qXzdgdG9JgbUpNtOfQxqUnGu_yoZzh7Tnux_rJL6o2R6TIX-jbjP8nRUvgczUqVUS9PwahnlbehjpkM7crcZwdSTiJHK7z_KHbHJpjByf87ij0hFzYPOPx1LUSRS64ab4uwRNiQmQ9qSj8A87d_FUjM5z3j9aA",
+    });
+  });
+</script>
+
+
+      <script src="https://cdn.affinipay.com/hostedfields/1.1.1/fieldGen_1.1.1.js"
+  integrity="sha512-rlzLl+aqZ/etkrea9Q5Q5UPhTzOAQdbfmmlUKlhOwpLooj1/MIwW6w+03NY0qvx9GOb69KcZEOlImTg6nHO/UA=="
+  crossorigin="anonymous"
+  defer="defer"
+  ></script>
+
+    <script type="text/javascript">
+  window.addEventListener('DOMContentLoaded', function() {
+    /* <![CDATA[ */
+    var google_conversion_id = 1050444294;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+  });
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js" defer="defer"></script>
+
+
+    <script src="https://d1z9ara1acwrvo.cloudfront.net/javascripts/seon/v5-agent.js" defer="defer"></script>
+  </head>
+ <body>
+    <div
+      id="apollo-app"
+      class="apollo-app"
+      ng-controller="ApolloAppController as $ctrl"
+      layout="default"
+      unresolved
+    >
+      <script data-app-shell-stamp>
+        var isCollapsed = window.localStorage["clio.collapsedMenu"] == "true";
+        if (isCollapsed) {
+          var css = ".app-skeleton-screen .cc-navigation nav { width: var(--clio-spacing-14) !important; }";
+          var style = document.createElement("style");
+          style.appendChild(document.createTextNode(css));
+
+          document.head.appendChild(style);
+        }
+      </script>
+
+        <div class="d-flex flex-column app-skeleton-screen app-wrapper" ng-cloak data-app-shell-stamp>
+          <div class="cc-header">
+            <header class="d-flex justify-content-between align-items-center header">
+              <div class="d-flex flex-row header-left-container">
+              <img alt="suits" class="suits-logo" src="{% static 'images/suit.jpg' %}">
+                <div class="unresolved-search"></div>
+                <div class="unresolved-recents-menu"></div>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="unresolved-timer"></div>
+                <div class="unresolved-global-create"></div>
+                <div class="unresolved-notifications-widget"></div>
+              </div>
+            </header>
+          </div>
+          <div class="app-body">
+            <div class="cc-navigation">
+              <nav class="unresolved-nav">
+                <div class="unresolved-nav-items">
+                  <div class="unresolved-nav-item">
+                    <div class="unresolved-nav-item-icon"></div>
+                    <div class="unresolved-nav-item-label"></div>
+                  </div>
+                  <div class="unresolved-nav-item">
+                    <div class="unresolved-nav-item-icon"></div>
+                    <div class="unresolved-nav-item-label"></div>
+                  </div>
+                  <div class="unresolved-nav-item">
+                    <div class="unresolved-nav-item-icon"></div>
+                    <div class="unresolved-nav-item-label"></div>
+                  </div>
+                  <div class="unresolved-nav-item">
+                    <div class="unresolved-nav-item-icon"></div>
+                    <div class="unresolved-nav-item-label"></div>
+                  </div>
+                  <div class="unresolved-nav-item">
+                    <div class="unresolved-nav-item-icon"></div>
+                    <div class="unresolved-nav-item-label"></div>
+                  </div>
+                  <div class="unresolved-nav-item">
+                    <div class="unresolved-nav-item-icon"></div>
+                    <div class="unresolved-nav-item-label"></div>
+                  </div>
+                  <div class="unresolved-nav-item">
+                    <div class="unresolved-nav-item-icon"></div>
+                    <div class="unresolved-nav-item-label"></div>
+                  </div>
+                  <div class="unresolved-nav-item">
+                    <div class="unresolved-nav-item-icon"></div>
+                    <div class="unresolved-nav-item-label"></div>
+                  </div>
+                  <div class="unresolved-nav-item">
+                    <div class="unresolved-nav-item-icon"></div>
+                    <div class="unresolved-nav-item-label"></div>
+                  </div>
+                  <div class="unresolved-nav-item">
+                    <div class="unresolved-nav-item-icon"></div>
+                    <div class="unresolved-nav-item-label"></div>
+                  </div>
+                  <div class="unresolved-nav-item">
+                    <div class="unresolved-nav-item-icon"></div>
+                    <div class="unresolved-nav-item-label"></div>
+                  </div>
+                  <div class="unresolved-nav-item">
+                    <div class="unresolved-nav-item-icon"></div>
+                    <div class="unresolved-nav-item-label"></div>
+                  </div>
+                  <div class="unresolved-nav-item">
+                    <div class="unresolved-nav-item-icon"></div>
+                    <div class="unresolved-nav-item-label"></div>
+                  </div>
+                </div>
+                <div class="unresolved-nav-items">
+                  <div class="unresolved-nav-item">
+                    <div class="unresolved-nav-item-icon"></div>
+                    <div class="unresolved-nav-item-label"></div>
+                  </div>
+                  <div class="unresolved-nav-item">
+                    <div class="unresolved-nav-item-icon"></div>
+                    <div class="unresolved-nav-item-label"></div>
+                  </div>
+                  <div class="unresolved-nav-item">
+                    <div class="unresolved-nav-item-icon"></div>
+                    <div class="unresolved-nav-item-label"></div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <div class="main d-flex flex-column flex-1 align-self-stretch">
+              <div class="d-flex p-2 justify-content-center loading">
+                <div class="th-loader ">
+                  <div class="progress small">
+                    <div></div>
+                  </div>
+                  <p ng-hide="loader.size == 'mini'" class="loading-text">Loading your content…</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="layout-{{layout }}">
+        <th-modal-anchor></th-modal-anchor>
+        <div ng-if="$ctrl.layout === 'default'">
+          <cc-account-state-verification></cc-account-state-verification>
+          <div
+            class="app-wrapper d-flex flex-column"
+            ng-class="{ 'top-banner-visible': $ctrl.isBannerVisible(),
+                        'experiment-banner-visible': $ctrl.displayExp846 }"
+            ng-cloak
+          >
+            <cc-impersonation-banner
+              on-impersonation-banner-update="$ctrl.onImpersonationBannerUpdate(state)"
+              ng-show="$ctrl.shouldShowBanner('impersonation')"
+            >
+            </cc-impersonation-banner>
+            <cc-trust-reconciliation-banner
+              on-trust-reconciliation-banner-update="$ctrl.onTrustReconciliationBannerUpdate(state)"
+              ng-show="$ctrl.shouldShowBanner('trustReconciliation')"
+            >
+            </cc-trust-reconciliation-banner>
+            <cc-disabled-email-banner
+              on-disabled-email-banner-update="$ctrl.onDisabledEmailBannerUpdate(state)"
+              ng-show="$ctrl.shouldShowBanner('disabledEmail')"
+            >
+            </cc-disabled-email-banner>
+            <cc-trial-banner
+              on-trial-banner-update="$ctrl.onTrialBannerUpdate(state, displayExp846)"
+              ng-show="$ctrl.shouldShowBanner('trial')"
+            >
+            </cc-trial-banner>
+            <cc-practice-area-collection-banner
+              on-practice-area-collection-banner-update="$ctrl.onPracticeAreaCollectionBannerUpdate(state)"
+              ng-show="$ctrl.shouldShowBanner('practiceArea')"
+            >
+            </cc-practice-area-collection-banner>
+            <div class="cc-header" ng-controller="HeaderController as $headerCtrl">
+              <header class="apollo-header d-flex justify-content-between align-items-center" aria-label="Header for Clio Manage with search and action items.">
+                <a target="_self" id="skip-to-content" href="#main-content">Skip to content</a>
+                <div class="d-flex flex-row header-left-container">
+                  <a class="d-flex align-items-center" ui-sref="dashboard()">
+                    <img alt="Clio" class="clio-logo" src="https://d1z9ara1acwrvo.cloudfront.net/assets/logo/clio-logo-99c8fde363d56f656c7c6687b29ae8f04fa76ee4a65fe66757008097b0cc17b6.svg" />
+                  </a>
+                  
+                  <cc-search-autocomplete
+                    class="d-flex align-items-center"
+                  ></cc-search-autocomplete>
+                  <div x-data="{ recentsOpen: false }" x-on:popover:toggle.prevent="recentsOpen = $event.detail.open">
+  <div data-view-component="recents-menu" x-data="popover" x-on:keydown.escape.window="closePopover()" x-on:menu:item-clicked.prevent="closePopover()" class="clio-ui-popover">
+  <div
+    x-ref="referenceElement"
+    x-on:click="openPopover(); $anchor($refs.referenceElement, $refs.floatingElement, 'bottom-start', 'absolute');"
+    x-on:keydown.space="openPopover(); $anchor($refs.referenceElement, $refs.floatingElement, 'bottom-start', 'absolute');"
+    x-on:keydown.enter="openPopover(); $anchor($refs.referenceElement, $refs.floatingElement, 'bottom-start', 'absolute');"
+  >
+          <button type="button" class="clio-ui-button clio-ui-button-primary !bg-blue-800 hover:!bg-blue-900 active:!bg-blue-1000 focus:outline focus:outline-offset-2 focus:outline-white clio-ui-button-with-suffix">
+  
+        Recents
+
+    <div class="clio-ui-button-suffix">
+      <i class="fa-solid fa-caret-down"></i>
+    </div>
+</button>
+
+  </div>
+    <div
+      class="clio-ui-popover-wrapper"
+      x-ref="floatingElement"
+      x-show="open"
+      x-trap="open"
+      x-on:click.outside="closePopover()"
+      x-cloak
+    >
+      <div class="w-[416px] clio-ui-popover-body">      <template x-if="recentsOpen">
+        <turbo-frame id="recents_menu" src="/log_entries/recents_menu">
+        </turbo-frame>
+      </template>
+</div>
+   </div>
+</div></div>
+
+</div>
+
+<ul class="d-flex align-items-center">
+    <li permission permission-except="'canUseApolloIntegrations'">
+      <th-popover template="$headerCtrl.appsPopoverTemplate" side="right">
+        <a
+          class="text-popover"
+          role="button"
+          aria-haspopup="true"
+          translate="global.header.clio"
+        ></a>
+      </th-popover>
+    </li>
+    <li>
+      <cc-tk-widget></cc-tk-widget>
+    </li>
+    <li>
+      <cc-global-create-menu></cc-global-create-menu>
+    </li>
+    <li>
+    </li>
+    <li>
+      <th-icon-button
+        icon="fa-solid fa-bell"
+        border-shape="circle"
+        type="primary"
+        class="notifications-widget ml-0"
+        ng-click="$headerCtrl.showNotifications()"
+        data-e2e="trigger-in-app-notifications-button"
+        aria-label="{% trans 'in_app_notifications.action' %}"
+      >
+      </th-icon-button>
+    </li>
+    <span
+      class="notifications-widget__notifications-count"
+      ng-if="$headerCtrl.notificationsCount > 0"
+    >
+      <p ng-bind="$headerCtrl.notificationsCountDisplay"></p>
+    </span>
+  </ul>
+  
+</header>
+</div>
+<th-alert-anchor></th-alert-anchor>
+<cc-in-app-notifications></cc-in-app-notifications>
+<div class="app-body">
+  <div
+id="cc-navigation"
+class="flex flex-col items-stretch print:h-0 print:w-0"
+data-view-component="navigation"
+x-data="navigation"
+x-on:popstate.window="setActiveNavigationItem()"
+>
+<nav
+class="flex flex-auto flex-col justify-between h-full overflow-x-hidden overflow-y-auto mb-0 bg-blue-1100 motion-safe:transition-[width] motion-safe:ease-in-out motion-safe:duration-[300ms] whitespace-nowrap"
+x-bind:class="{ 'w-14': $store.layout.navigation.collapsed, 'w-56': !$store.layout.navigation.collapsed }"
+role="navigation"
+id="main-navigation"
+x-on:keydown.up="$focus.prev()"
+x-on:keydown.right="$focus.next()"
+x-on:keydown.down="$focus.next()"
+x-on:keydown.left="$focus.prev()"
+>
+<ul class="flex flex-col flex-grow gap-0.5 py-3 px-2 m-0 list-none">
+    <li data-testid="dashboard">
+      <a
+        x-tooltip.placement.right.touch.false="Dashboard"
+        data-id="tooltip"
+        class="flex flex-row items-center gap-3 py-2 px-2.5 overflow-x-hidden rounded-md hover:bg-blue-1000 active:text-white active:bg-primary-active no-underline active:no-underline -tracking-[0.14px] pointer"
+        x-bind:class="{ 'selected bg-primary-active': activeNavigationItem === 'dashboard' }"
+        x-bind:aria-current="activeNavigationItem === 'dashboard' ? 'page' : 'false'"
+        x-on:click="activeNavigationItem = 'dashboard'"
+          ui-sref="dashboard"
+          ui-sref-opts="{ reload: true }"
+        tabindex="0"
+        data-testid="dashboard-item"
+      >
+        <div
+          class="flex shrink-0 items-center justify-center w-5 h-5"
+          x-bind:class="{
+            'text-blue-400': activeNavigationItem === 'dashboard',
+            'text-grey-300': activeNavigationItem !== 'dashboard',
+          }"
+          aria-hidden="true"
+        >
+          <span class="material-icons" aria-hidden="true">home</span>
+        </div>
+        <span
+          x-bind:class="{
+            'text-white font-bold': activeNavigationItem === 'dashboard',
+            'text-grey-200 font-medium': activeNavigationItem !== 'dashboard',
+          }"
+        >
+          Dashboard
+        </span>
+      </a>
+    </li>
+    <li data-testid="calendars">
+      <a
+        x-tooltip.placement.right.touch.false="Calendar"
+        data-id="tooltip"
+        class="flex flex-row items-center gap-3 py-2 px-2.5 overflow-x-hidden rounded-md hover:bg-blue-1000 active:text-white active:bg-primary-active no-underline active:no-underline -tracking-[0.14px] pointer"
+        x-bind:class="{ 'selected bg-primary-active': activeNavigationItem === 'calendars' }"
+        x-bind:aria-current="activeNavigationItem === 'calendars' ? 'page' : 'false'"
+        x-on:click="activeNavigationItem = 'calendars'"
+          ui-sref="calendars"
+          ui-sref-opts="{ reload: true }"
+        tabindex="0"
+      >
+        <div
+          class="flex shrink-0 items-center justify-center w-5 h-5"
+          x-bind:class="{
+            'text-blue-400': activeNavigationItem === 'calendars',
+            'text-grey-300': activeNavigationItem !== 'calendars',
+          }"
+          aria-hidden="true"
+        >
+          <span class="material-icons" aria-hidden="true">calendar_today</span>
+        </div>
+        <span
+          x-bind:class="{
+            'text-white font-bold': activeNavigationItem === 'calendars',
+            'text-grey-200 font-medium': activeNavigationItem !== 'calendars',
+          }"
+        >
+          Calendar
+        </span>
+      </a>
+    </li>
+</ul>
+      <li data-testid="tasks">
+  <a
+    x-tooltip.placement.right.touch.false="Tasks"
+    data-id="tooltip"
+    class="flex flex-row items-center gap-3 py-2 px-2.5 overflow-x-hidden rounded-md hover:bg-blue-1000 active:text-white active:bg-primary-active no-underline active:no-underline -tracking-[0.14px] pointer"
+    x-bind:class="{ 'selected bg-primary-active': activeNavigationItem === 'tasks' }"
+    x-bind:aria-current="activeNavigationItem === 'tasks' ? 'page' : 'false'"
+    x-on:click="activeNavigationItem = 'tasks'"
+    ui-sref="tasks"
+    ui-sref-opts="{ reload: true }"
+    tabindex="0"
+    data-e2e="nav-apollo-tasks"
+  >
+    <div
+      class="flex shrink-0 items-center justify-center w-5 h-5"
+      x-bind:class="{
+        'text-blue-400': activeNavigationItem === 'tasks',
+        'text-grey-300': activeNavigationItem !== 'tasks',
+      }"
+      aria-hidden="true"
+    >
+      <span class="material-icons" aria-hidden="true">list</span>
+    </div>
+    <span
+      x-bind:class="{
+        'text-white font-bold': activeNavigationItem === 'tasks',
+        'text-grey-200 font-medium': activeNavigationItem !== 'tasks',
+      }"
+    >
+      Tasks
+    </span>
+  </a>
+</li>
+<li data-testid="matters">
+  <a
+    x-tooltip.placement.right.touch.false="Matters"
+    data-id="tooltip"
+    class="flex flex-row items-center gap-3 py-2 px-2.5 overflow-x-hidden rounded-md hover:bg-blue-1000 active:text-white active:bg-primary-active no-underline active:no-underline -tracking-[0.14px] pointer"
+    x-bind:class="{ 'selected bg-primary-active': activeNavigationItem === 'matters' }"
+    x-bind:aria-current="activeNavigationItem === 'matters' ? 'page' : 'false'"
+    x-on:click="activeNavigationItem = 'matters'"
+    ui-sref="matters"
+    ui-sref-opts="{ reload: true }"
+    tabindex="0"
+  >
+    <div
+      class="flex shrink-0 items-center justify-center w-5 h-5"
+      x-bind:class="{
+        'text-blue-400': activeNavigationItem === 'matters',
+        'text-grey-300': activeNavigationItem !== 'matters',
+      }"
+      aria-hidden="true"
+    >
+      <span class="material-icons" aria-hidden="true">work</span>
+    </div>
+    <span
+      x-bind:class="{
+        'text-white font-bold': activeNavigationItem === 'matters',
+        'text-grey-200 font-medium': activeNavigationItem !== 'matters',
+      }"
+    >
+      Matters
+    </span>
+  </a>
+</li>
+<li data-testid="contacts">
+  <a
+    x-tooltip.placement.right.touch.false="Contacts"
+    data-id="tooltip"
+    class="flex flex-row items-center gap-3 py-2 px-2.5 overflow-x-hidden rounded-md hover:bg-blue-1000 active:text-white active:bg-primary-active no-underline active:no-underline -tracking-[0.14px] pointer"
+    x-bind:class="{ 'selected bg-primary-active': activeNavigationItem === 'contacts' }"
+    x-bind:aria-current="activeNavigationItem === 'contacts' ? 'page' : 'false'"
+    x-on:click="activeNavigationItem = 'contacts'"
+    ui-sref="contacts"
+    ui-sref-opts="{ reload: true }"
+    tabindex="0"
+    data-e2e="nav-container-contacts"
+  >
+    <div
+      class="flex shrink-0 items-center justify-center w-5 h-5"
+      x-bind:class="{
+        'text-blue-400': activeNavigationItem === 'contacts',
+        'text-grey-300': activeNavigationItem !== 'contacts',
+      }"
+      aria-hidden="true"
+    >
+      <span class="material-icons" aria-hidden="true">contacts</span>
+    </div>
+    <span
+      x-bind:class="{
+        'text-white font-bold': activeNavigationItem === 'contacts',
+        'text-grey-200 font-medium': activeNavigationItem !== 'contacts',
+      }"
+    >
+      Contacts
+    </span>
+  </a>
+</li>
+<li data-testid="activities">
+  <a
+    x-tooltip.placement.right.touch.false="Activities"
+    data-id="tooltip"
+    class="flex flex-row items-center gap-3 py-2 px-2.5 overflow-x-hidden rounded-md hover:bg-blue-1000 active:text-white active:bg-primary-active no-underline active:no-underline -tracking-[0.14px] pointer"
+    x-bind:class="{ 'selected bg-primary-active': activeNavigationItem === 'activities' }"
+    x-bind:aria-current="activeNavigationItem === 'activities' ? 'page' : 'false'"
+    x-on:click="activeNavigationItem = 'activities'"
+    ui-sref="activities"
+    ui-sref-opts="{ reload: true }"
+    tabindex="0"
+  >
+    <div
+      class="flex shrink-0 items-center justify-center w-5 h-5"
+      x-bind:class="{
+        'text-blue-400': activeNavigationItem === 'activities',
+        'text-grey-300': activeNavigationItem !== 'activities',
+      }"
+      aria-hidden="true"
+    >
+      <span class="material-icons" aria-hidden="true">schedule</span>
+    </div>
+    <span
+      x-bind:class="{
+        'text-white font-bold': activeNavigationItem === 'activities',
+        'text-grey-200 font-medium': activeNavigationItem !== 'activities',
+      }"
+    >
+      Activities
+    </span>
+  </a>
+</li>
+       <li data-testid="billing">
+  <a
+    x-tooltip.placement.right.touch.false="Bills"
+    data-id="tooltip"
+    class="flex flex-row items-center justify-between py-2 px-2.5 overflow-x-hidden rounded-md hover:bg-blue-1000 active:text-white active:bg-primary-active no-underline active:no-underline -tracking-[0.14px] pointer"
+    x-bind:class="{ 'selected bg-primary-active': activeNavigationItem === 'billing' }"
+    x-bind:aria-current="activeNavigationItem === 'billing' ? 'page' : 'false'"
+    x-on:click="activeNavigationItem = 'billing'"
+      ui-sref="bills"
+      ui-sref-opts="{ reload: true }"
+    tabindex="0"
+  >
+    <div class="flex items-center gap-3">
+      <div
+        class="flex shrink-0 items-center justify-center w-5 h-5"
+        x-bind:class="{
+        'text-blue-400': activeNavigationItem === 'billing',
+        'text-grey-300': activeNavigationItem !== 'billing',
+      }"
+        aria-hidden="true"
+      >
+        <span class="material-icons" aria-hidden="true">receipt_long</span>
+        <span
+          class="absolute self-start left-8 h-2 w-2 rounded-full bg-red-700"
+          x-show="$store.layout.navigation.collapsed && $store.billing.formattedUnreadNotificationCount"
+          aria-hidden="true"
+        ></span>
+      </div>
+      <span
+        x-bind:class="{
+        'text-white font-bold': activeNavigationItem === 'billing',
+        'text-grey-200 font-medium': activeNavigationItem !== 'billing',
+      }"
+    >
+      Billing
+    </span>
+    </div>
+    <div class="px-1.5 py-0.5 min-w-2 rounded-full text-center text-xs text-white bg-red-700" x-show="$store.billing.formattedUnreadNotificationCount">
+      <span x-text="$store.billing.formattedUnreadNotificationCount"></span>
+    </div>
+  </a>
+</li>
+<li data-testid="accounts">
+  <a
+    x-tooltip.placement.right.touch.false="Accounts"
+    data-id="tooltip"
+    class="flex flex-row items-center gap-3 py-2 px-2.5 overflow-x-hidden rounded-md hover:bg-blue-1000 active:text-white active:bg-primary-active no-underline active:no-underline -tracking-[0.14px] pointer"
+    x-bind:class="{ 'selected bg-primary-active': activeNavigationItem === 'accounts' }"
+    x-bind:aria-current="activeNavigationItem === 'accounts' ? 'page' : 'false'"
+    x-on:click="activeNavigationItem = 'accounts'"
+      ui-sref="bankAccounts"
+      ui-sref-opts="{ reload: true }"
+    tabindex="0"
+  >
+    <div
+      class="flex shrink-0 items-center justify-center w-5 h-5"
+      x-bind:class="{
+        'text-blue-400': activeNavigationItem === 'accounts',
+        'text-grey-300': activeNavigationItem !== 'accounts',
+      }"
+      aria-hidden="true"
+    >
+      <span class="material-icons" aria-hidden="true">account_balance</span>
+    </div>
+    <span
+      x-bind:class="{
+        'text-white font-bold': activeNavigationItem === 'accounts',
+        'text-grey-200 font-medium': activeNavigationItem !== 'accounts',
+      }"
+    >
+      Accounts
+    </span>
+  </a>
+</li>
+<li data-testid="documents">
+  <a
+    x-tooltip.placement.right.touch.false="Documents"
+    data-id="tooltip"
+    class="flex flex-row items-center gap-3 py-2 px-2.5 overflow-x-hidden rounded-md hover:bg-blue-1000 active:text-white active:bg-primary-active no-underline active:no-underline -tracking-[0.14px] pointer"
+    x-bind:class="{ 'selected bg-primary-active': activeNavigationItem === 'documents' }"
+    x-bind:aria-current="activeNavigationItem === 'documents' ? 'page' : 'false'"
+    x-on:click="activeNavigationItem = 'documents'"
+      ui-sref="documents.default"
+      ui-sref-opts="{ reload: true }"
+    tabindex="0"
+  >
+    <div
+      class="flex shrink-0 items-center justify-center w-5 h-5"
+      x-bind:class="{
+        'text-blue-400': activeNavigationItem === 'documents',
+        'text-grey-300': activeNavigationItem !== 'documents',
+      }"
+      aria-hidden="true"
+    >
+      <span class="material-icons" aria-hidden="true">folder_open</span>
+    </div>
+    <span
+      x-bind:class="{
+        'text-white font-bold': activeNavigationItem === 'documents',
+        'text-grey-200 font-medium': activeNavigationItem !== 'documents',
+      }"
+    >
+      Documents
+    </span>
+  </a>
+</li>
+  <li data-testid="communications">
+  <a
+    x-tooltip.placement.right.touch.false="Communications"
+    data-id="tooltip"
+    class="flex flex-row items-center justify-between py-2 px-2.5 overflow-x-hidden rounded-md hover:bg-blue-1000 active:text-white active:bg-primary-active no-underline active:no-underline -tracking-[0.14px] pointer"
+    x-bind:class="{ 'selected bg-primary-active': activeNavigationItem === 'communications' }"
+    x-bind:aria-current="activeNavigationItem === 'communications' ? 'page' : 'false'"
+    x-on:click="activeNavigationItem = 'communications'"
+    href="/nc/#/communications?tab=0"
+    tabindex="0"
+  >
+    <div class="flex items-center gap-3">
+      <div
+        class="flex shrink-0 items-center justify-center w-5 h-5"
+        x-bind:class="{
+          'text-blue-400': activeNavigationItem === 'communications',
+          'text-grey-300': activeNavigationItem !== 'communications',
+        }"
+        aria-hidden="true"
+      >
+        <span class="material-icons" aria-hidden="true">chat</span>
+        <span
+          class="absolute self-start left-8 h-2 w-2 rounded-full bg-red-700"
+          x-show="$store.layout.navigation.collapsed && $store.communications.totalNotifiableMessageCount"
+          data-testid="collapsed_navigation_communications_badge"
+          aria-hidden="true"
+        ></span>
+      </div>
+      <span
+        x-bind:class="{
+          'text-white font-bold': activeNavigationItem === 'communications',
+          'text-grey-200 font-medium': activeNavigationItem !== 'communications',
+        }"
+      >
+        Communications
+      </span>
+    </div>
+    <div class="px-1.5 py-0.5 min-w-2 rounded-full text-center text-xs text-white bg-red-700" x-show="$store.communications.totalNotifiableMessageCount">
+      <span x-text="$store.communications.totalNotifiableMessageCount"></span>
+    </div>
+  </a>
+</li>
+<li data-testid="reports">
+  <a
+    x-tooltip.placement.right.touch.false="Reports"
+    data-id="tooltip"
+    class="flex flex-row items-center gap-3 py-2 px-2.5 overflow-x-hidden rounded-md hover:bg-blue-1000 active:text-white active:bg-primary-active no-underline active:no-underline -tracking-[0.14px] pointer"
+    x-bind:class="{ 'selected bg-primary-active': activeNavigationItem === 'reports' }"
+    x-bind:aria-current="activeNavigationItem === 'reports' ? 'page' : 'false'"
+    x-on:click="activeNavigationItem = 'reports'"
+    ui-sref="reports"
+    ui-sref-opts="{ reload: true }"
+    tabindex="0"
+  >
+    <div
+      class="flex shrink-0 items-center justify-center w-5 h-5"
+      x-bind:class="{
+        'text-blue-400': activeNavigationItem === 'reports',
+        'text-grey-300': activeNavigationItem !== 'reports',
+      }"
+      aria-hidden="true"
+    >
+      <span class="material-icons" aria-hidden="true">bar_chart</span>
+    </div>
+    <span
+      x-bind:class="{
+        'text-white font-bold': activeNavigationItem === 'reports',
+        'text-grey-200 font-medium': activeNavigationItem !== 'reports',
+      }"
+    >
+      Reports
+    </span>
+  </a>
+</li>
+<li data-testid="app_integrations">
+  <a
+    x-tooltip.placement.right.touch.false="App Integrations"
+    data-id="tooltip"
+    class="flex flex-row items-center gap-3 py-2 px-2.5 overflow-x-hidden rounded-md hover:bg-blue-1000 active:text-white active:bg-primary-active no-underline active:no-underline -tracking-[0.14px] pointer"
+    x-bind:class="{ 'selected bg-primary-active': activeNavigationItem === 'app_integrations' }"
+    x-bind:aria-current="activeNavigationItem === 'app_integrations' ? 'page' : 'false'"
+    x-on:click="activeNavigationItem = 'app_integrations'"
+    ui-sref="appIntegrations"
+    ui-sref-opts="{ reload: true }"
+    tabindex="0"
+  >
+    <div
+      class="flex shrink-0 items-center justify-center w-5 h-5"
+      x-bind:class="{
+        'text-blue-400': activeNavigationItem === 'app_integrations',
+        'text-grey-300': activeNavigationItem !== 'app_integrations',
+      }"
+      aria-hidden="true"
+    >
+      <span class="material-icons" aria-hidden="true">integration_instructions</span>
+    </div>
+    <span
+      x-bind:class="{
+        'text-white font-bold': activeNavigationItem === 'app_integrations',
+        'text-grey-200 font-medium': activeNavigationItem !== 'app_integrations',
+      }"
+    >
+      App Integrations
+    </span>
+  </a>
+</li>
+<li data-testid="settings">
+  <a
+    x-tooltip.placement.right.touch.false="Settings"
+    data-id="tooltip"
+    class="flex flex-row items-center gap-3 py-2 px-2.5 overflow-x-hidden rounded-md hover:bg-blue-1000 active:text-white active:bg-primary-active no-underline active:no-underline -tracking-[0.14px] pointer"
+    x-bind:class="{ 'selected bg-primary-active': activeNavigationItem === 'settings' }"
+    x-bind:aria-current="activeNavigationItem === 'settings' ? 'page' : 'false'"
+    x-on:click="activeNavigationItem = 'settings'"
+    ui-sref="settings"
+    ui-sref-opts="{ reload: true, inherit: false }"
+    tabindex="0"
+  >
+    <div
+      class="flex shrink-0 items-center justify-center w-5 h-5"
+      x-bind:class="{
+        'text-blue-400': activeNavigationItem === 'settings',
+        'text-grey-300': activeNavigationItem !== 'settings',
+      }"
+      aria-hidden="true"
+    >
+      <span class="material-icons" aria-hidden="true">settings</span>
+    </div>
+    <span
+      x-bind:class="{
+        'text-white font-bold': activeNavigationItem === 'settings',
+        'text-grey-200 font-medium': activeNavigationItem !== 'settings',
+      }"
+    >
+      Settings
+    </span>
+  </a>
+</li>
+</ul>
+    <ul class="flex flex-col flex-grow justify-end gap-2 p-3 m-0 list-none">
+        <li>
+          <a
+            class="group flex flex-row items-center gap-3 py-0.5 overflow-x-visible relative rounded-md no-underline active:no-underline -tracking-[0.14px] pointer"
+            data-pendo-id="resource-center"
+            tabindex="0"
+          >
+            <div class="flex shrink-0 items-center justify-center w-8 h-8 bg-blue-200 group-hover:bg-blue-300 group-active:bg-blue-300 text-blue-800 text-xl rounded-2xl">
+              <i class="fa-solid fa-question"></i>
+            </div>
+            <span class="text-grey-200 font-medium">
+              Resource centre
+            </span>
+          </a>
+        </li>
+      <li data-testid="user-menu">
+  <div
+    data-view-component="user-menu"
+    x-data="userMenu('038-312-726-2888', '2024-08-26 09:15:55 -0700', '/account_data.json')"
+    x-on:popover:toggle.prevent="toggleUserMenu($event.detail.open)"
+  >
+    <div x-data="popover" x-on:keydown.escape.window="closePopover()" x-on:menu:item-clicked.prevent="closePopover()" class="block clio-ui-popover">
+      <div
+        x-ref="referenceElement"
+        x-on:click="openPopover(); $anchor($refs.referenceElement, $refs.floatingElement, 'top-start', 'absolute');"
+        x-on:keydown.space="openPopover(); $anchor($refs.referenceElement, $refs.floatingElement, 'top-start', 'absolute');"
+        x-on:keydown.enter="openPopover(); $anchor($refs.referenceElement, $refs.floatingElement, 'top-start', 'absolute');"
+      >
+        <a
+          x-tooltip.placement.right.touch.false="Your account"
+          data-id="tooltip"
+          class="group flex flex-row items-center gap-3 py-0.5 overflow-x-hidden rounded-md no-underline active:no-underline pointer"
+          tabindex="0"
+        >
+          <div class="clio-ui-avatar clio-ui-avatar-initials clio-ui-avatar-secondary clio-ui-avatar-circle clio-ui-avatar-sm flex shrink-0 !bg-blue-700 !text-white">
+            <!-- Displaying user's initials dynamically -->
+            {{ user.get_initials }}
+          </div>
+          <div class="flex flex-col items-start">
+            <span class="max-w-36 font-medium overflow-hidden text-ellipsis whitespace-nowrap text-grey-200 -tracking-[0.14px]">
+              {{ user.get_full_name }}
+            </span>
+            <span
+              class="max-w-36 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-grey-500"
+              x-on:legacy-view-dom-content-loaded.window="updateAccountName($event)"
+              x-ref="accountName">
+              {{ user.firm_name }}
+            </span>
+          </div>
+        </a>
+      </div>
+      <div
+        class="clio-ui-popover-wrapper"
+        x-ref="floatingElement"
+        x-show="open"
+        x-trap="open"
+        x-on:click.outside="closePopover()"
+        x-cloak
+      >
+        <div class="clio-ui-popover-body">
+          <div class="grid grid-cols-1 gap-y-5 w-[272px] divide-solid divide-x-0 divide-y divide-dark">
+            <div class="pt-5 px-5">
+              <h3>Jayden Lobee</h3>
+              <p class="text-subdued">
+                Support code: <span x-text="userAuthToken"></span>
+              </p>
+              <a ui-sref="settings({path: 'users/' + 288026})" ui-sref-opts="{ reload: true }">
+                <span class="material-icons text-white">person</span>
+                View Profile
+              </a>
+            </div>
+            <div class="py-3 flex flex-col">
+              <a class="py-2 px-5 no-underline whitespace-nowrap text-[#263238] hover:bg-secondary-hover hover:text-[#263238] active:no-underline" href="#/subscriptions">
+                <span class="material-icons text-blue-500">upgrade</span>
+                Upgrade plan
+              </a>
+              <a target="_blank" class="py-2 px-5 no-underline whitespace-nowrap text-[#263238] hover:bg-secondary-hover hover:text-[#263238] active:no-underline" href="https://www.clio.com/uk/customers/refer-a-friend/">
+                <span class="material-icons text-blue-500">share</span>
+                Referral rewards
+              </a>
+              <a target="_blank" class="py-2 px-5 no-underline whitespace-nowrap text-[#263238] hover:bg-secondary-hover hover:text-[#263238] active:no-underline" href="https://help.clio.com/hc/en-150">
+                <span class="material-icons text-blue-500">help</span>
+                Help centre
+              </a>
+              <a target="_blank" class="py-2 px-5 no-underline whitespace-nowrap text-[#263238] hover:bg-secondary-hover hover:text-[#263238] active:no-underline" href="https://www.clio.com/uk/resources/quickstart-on-boarding-series?cta=side-nav-popover">
+                <span class="material-icons text-blue-500">video_library</span>
+                Webinars
+              </a>
+              <a href="{% url 'userauth:sign-out' %}" class="py-2 px-5 no-underline whitespace-nowrap text-[#263238] hover:bg-secondary-hover hover:text-[#263238] active:no-underline">
+  <span class="material-icons text-blue-500">logout</span>
+  Sign out
+</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
+
+        <li id="collapse-container">
+        <a
+          x-on:click="toggleNavigationCollapsed"
+          x-on:keydown.space="toggleNavigationCollapsed"
+          x-on:keydown.enter="toggleNavigationCollapsed"
+          class="group flex flex-row items-center gap-3 py-0.5 overflow-x-hidden rounded-md no-underline active:no-underline -tracking-[0.14px] pointer"
+          tabindex="0"
+          aria-controls="main-navigation"
+          x-bind:aria-label="$store.layout.navigation.collapsed ? 'Expand sidebar' : 'Collapse sidebar'"
+          x-bind:aria-expanded="!$store.layout.navigation.collapsed"
+          data-testid="collapse-toggle"
+          role="button"
+        >
+          <div class="flex shrink-0 items-center justify-center w-8 h-8 bg-grey-200 group-hover:bg-grey-300 group-active:bg-grey-300 text-grey-700 text-xl rounded-2xl">
+            <span
+              class="fa-solid"
+              x-bind:class="{ 'fa-chevron-left': !$store.layout.navigation.collapsed, 'fa-chevron-right': $store.layout.navigation.collapsed}"
+              aria-hidden="true"
+            ></span>
+          </div>
+          <span class="text-grey-200 font-medium">
+            Collapse
+          </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+              <div class="main">
+                <th-notification-container></th-notification-container>
+                <cc-password-expiry-notification-banner></cc-password-expiry-notification-banner>
+                <cc-xero-two-factor-notifications></cc-xero-two-factor-notifications>
+                <div
+                  id="main-content"
+                  data-testid="layout-main-content"
+                  role="main"
+                  tabindex="-1"
+                  class="ui-view-wrapper"
+                  ui-view
+                  x-bind:class="{ 'state-nav-collapsed': $store.layout.navigation.collapsed }"
+                >
+                  <!-- Placeholder view -->
+
+                </div>
+              </div>
+            </div>
+            <cc-nps-survey></cc-nps-survey>
+          </div>
+        </div>
+        <div class="{% if layout == 'manage-basic' %}logo-header{% endif %}">
+            <img
+                src="{{ icon_path }}"
+                alt="{{ icon_alt }}"
+                class="clio-manage-logo"
+            />
+        </div>        
+          <div class="main">
+            <div class="ui-view-wrapper" ui-view></div>
+          </div>
+        </div>
+        <div ng-if="$ctrl.layout === 'practice-area-capture'">
+          <practice-area-capture
+            on-close="$ctrl.changeLayoutToDefault()"
+          ></practice-area-capture>
+          <th-notification-container></th-notification-container>
+        </div>
+        <th-system-notification-container
+          ng-class="{ 'banner-visible': $ctrl.isBannerVisible(),
+                      'experiment-banner-visible': $ctrl.displayExp846 }"
+        >
+        </th-system-notification-container>
+      </div>
+    </div>
+    <turbo-frame id="dialog"></turbo-frame>
+  </body>
+</html>

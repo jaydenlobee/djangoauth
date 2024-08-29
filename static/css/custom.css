@@ -1,0 +1,9 @@
+/* custom.css */
+.login-logo {
+    width: 15px; /* Adjust the size as needed */
+    height: 15px; /* Adjust the size as needed */
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Ensures the image covers the container */
+}
+
+

@@ -1,0 +1,309 @@
+{% extends 'dashboard/base.html' %}
+{% load userauth_filters %}
+{% block body_class %}custom-register{% endblock %}
+{% block content %}
+<div id="custom-signin-page" class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="mb-4 text-center">Sign In</h2>
+
+                    <form id="signin-form" action=
+"{% url 'userauth:sign-in' %}" method="POST" novalidate>
+                        {% csrf_token %}
+                        <div id="form-errors"></div> <!-- Container for form errors -->
+
+                        <!-- Email Field -->
+                        <div class="form-group">
+                            <label for="{{ form.email.id_for_label }}" class="font-weight-bold">Email Address</label>
+                            {{ form.email|add_class:"form-control" }}
+                            {% if form.email.errors %}
+                                <div class="text-danger">{{ form.email.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="form-group">
+                            <label for="{{ form.password.id_for_label }}" class="font-weight-bold">Password</label>
+                            <div class="input-group">
+                                {{ form.password|add_class:"form-control" }}
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i id="toggle-password" class="material-icons">visibility</i>
+                                    </span>
+                                </div>
+                            </div>
+                            {% if form.password.errors %}
+                                <div class="text-danger">{{ form.password.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Sign In Button -->
+                        <button type="submit" class="btn btn-primary btn-sm btn-block">
+                            <span class="material-icons">login</span> Sign In
+                        </button>
+                    </form>
+
+                    <!-- Account Management Links -->
+                    <div class="text-center mt-3">
+                        <p class="mb-1">Don't have an account? <a href="{% url 'userauth:sign-up' %}">Create one</a></p>
+                        <p>Forgot your password? <a href="{% url 'userauth:password_reset' %}">Reset It</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Loader HTML -->
+<div id="loader" class="loader-overlay">
+    <div class="loader"></div>
+</div>
+<style>
+    /* Scoped styles for the sign-in page only */
+#custom-signin-page {
+    background-color: transparent;
+}
+
+/* Card styles */
+#custom-signin-page .card {
+    border-radius: 1rem;
+    border: 5px solid transparent;
+    background-color: transparent;
+    border-image-source: linear-gradient(to right, #FF5733, #28A745);
+    border-image-slice: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+#custom-signin-page .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#custom-signin-page .card-body {
+    padding: 2rem;
+}
+
+/* Form controls */
+#custom-signin-page .form-control {
+    border-radius: 0.5rem;
+    box-shadow: none;
+    margin-bottom: 1rem;
+    background-color: #f2f2f2; /* Light grey background */
+    border: 1px solid #4caf50; /* Greenish border */
+}
+
+/* Buttons */
+#custom-signin-page .btn {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 0.5rem;
+    margin-top: 20px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#custom-signin-page .btn-primary {
+    background-color: hsl(234, 100%, 50%);
+    border-color: #d9ff00;
+}
+
+#custom-signin-page .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/* Labels and text */
+#custom-signin-page .form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+#custom-signin-page .card-body p a {
+    color: #28A745;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#custom-signin-page .card-body p a:hover {
+    text-decoration: underline;
+}
+
+#custom-signin-page .text-danger {
+    font-size: 0.875rem;
+    color: red;
+}
+
+/* Dark Mode Overrides */
+body.custom-register.dark-mode #custom-signin-page .card,
+body.custom-register.dark-mode #custom-signin-page .card-body,
+body.custom-register.dark-mode #custom-signin-page .form-control,
+body.custom-register.dark-mode #custom-signin-page .btn-primary,
+body.custom-register.dark-mode #custom-signin-page .card-body p a {
+    background-color: #000; /* Dark background */
+    color: white; /* Text color for dark mode */
+}
+
+body.custom-register.dark-mode #custom-signin-page .form-control {
+    border: 1px solid #757879; /* Optional: Adjust border for dark mode */
+}
+
+body.custom-register.dark-mode #custom-signin-page .btn-primary {
+    background-color: #0056b3; /* Darker background color */
+    border-color: #004085; /* Darker border color */
+}
+
+body.custom-register.dark-mode #custom-signin-page .card-body p a {
+    color: green; /* Link color for dark mode */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #custom-signin-page .card-body {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #custom-signin-page .card-body {
+        padding: 1rem;
+    }
+
+    #custom-signin-page .btn {
+        font-size: 12px;
+    }
+}
+
+/* Password visibility toggle */
+.input-group-text {
+    cursor: pointer;
+    background-color: transparent; /* Same as form control background to match */
+    border: 1px solid #4caf50; /* Same as form control border for consistency */
+    border-radius: 0 0.25rem 0.25rem 0; /* Match form control border-radius */
+}
+
+.material-icons {
+    font-size: 18px; /* Adjust size to fit the input field */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.input-group-text:hover .material-icons {
+    color: #0056b3; /* Change color on hover for better UX */
+}
+
+/* Loader Styles */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure loader is above all other content */
+}
+
+.loader {
+    border: 8px solid #e83008; /* Light grey border */
+    border-top: 8px solid #770488; /* Blue border */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite; /* Spin animation */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+{% block extra_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('signin-form');
+    const loader = document.getElementById('loader'); // Loader element
+
+    // Function to handle form submission
+    function handleFormSubmit(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Show the loader
+        loader.style.display = 'flex';
+
+        const formData = new FormData(form);
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', form.action, true);
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.setRequestHeader('X-CSRFToken', form.querySelector('[name="csrfmiddlewaretoken"]').value);
+
+        xhr.onload = function() {
+            // Hide the loader
+            loader.style.display = 'none';
+
+            if (xhr.status >= 200 && xhr.status < 300) {
+                const response = JSON.parse(xhr.responseText);
+
+                if (response.success) {
+                    // Redirect to the URL provided in the response
+                    window.location.href = response.redirect_url;
+                } else {
+                    // Clear previous errors
+                    const errorContainer = document.getElementById('form-errors');
+                    if (errorContainer) {
+                        errorContainer.innerHTML = '';
+                    }
+
+                    // Remove existing error messages from form fields
+                    document.querySelectorAll('.text-danger').forEach(el => el.remove());
+
+                    // Display new errors
+                    const errors = response.errors;
+                    for (const [field, fieldErrors] of Object.entries(errors)) {
+                        const fieldContainer = form.querySelector(`[name="${field}"]`).closest('.form-group');
+                        if (fieldContainer) {
+                            const errorDiv = document.createElement('div');
+                            errorDiv.className = 'text-danger';
+                            errorDiv.innerHTML = fieldErrors.join('<br>');
+                            fieldContainer.appendChild(errorDiv);
+                        }
+                    }
+                }
+            } else {
+                alert('An error occurred. Please try again.');
+            }
+        };
+
+        xhr.onerror = function() {
+            // Hide the loader
+            loader.style.display = 'none';
+            alert('An error occurred. Please try again.');
+        };
+
+        xhr.send(formData);
+    }
+
+    // Attach submit event handler to form
+    form.addEventListener('submit', handleFormSubmit);
+
+    // Toggle password visibility
+    function setupPasswordToggle(toggleId, passwordFieldName) {
+        const toggleButton = document.getElementById(toggleId);
+        const passwordField = document.querySelector(`[name="${passwordFieldName}"]`);
+
+        toggleButton.addEventListener('click', function() {
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                toggleButton.textContent = 'visibility_off'; // Use icon text for closed eye
+            } else {
+                passwordField.type = 'password';
+                toggleButton.textContent = 'visibility'; // Use icon text for open eye
+            }
+        });
+    }
+
+    setupPasswordToggle('toggle-password', 'password');
+});
+</script>
+{% endblock %}
+{% endblock %}

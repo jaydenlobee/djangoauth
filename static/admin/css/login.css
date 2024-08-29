@@ -1,0 +1,119 @@
+/* Login Form Container */
+.login {
+    background: var(--darkened-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0 20px;
+}
+
+/* Logo Customization */
+.logo-custom {
+    width: 80px; /* Adjust the width as necessary */
+    height: 80px; /* Adjust the height to match the width */
+    object-fit: cover; /* Ensures the image is contained within the circle */
+    border-radius: 50%; /* Makes sure the image is circular */
+    border: 2px solid #ccc; /* Optional: Adds a border around the logo */
+    margin: 0 auto 20px; /* Centers the image and adds spacing below */
+    display: block;
+}
+
+/* Header Section */
+.login #header {
+    height: auto;
+    padding: 15px 16px;
+    text-align: center; /* Center the header text */
+}
+
+.login #header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--header-link-color); /* Ensure this color is defined */
+}
+
+/* Content Container */
+.login #content {
+    padding: 20px;
+    background-color: var(--body-bg);
+    border: 1px solid var(--hairline-color);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px; /* Adjust max-width as necessary */
+    box-sizing: border-box;
+}
+
+/* Form Styling */
+.login .form-row {
+    padding: 8px 0;
+}
+
+.login .form-row label {
+    display: block;
+    line-height: 2em;
+    font-weight: bold;
+    color: var(--text-color); /* Ensure this color is defined */
+}
+
+.login .form-row #id_username, .login .form-row #id_password {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--hairline-color); /* Ensure this color is defined */
+    border-radius: 4px;
+    background-color: var(--input-bg); /* Ensure this color is defined */
+}
+
+/* Submit Button Styling */
+.login .submit-row {
+    padding: 1em 0 0;
+    margin: 0;
+    text-align: center;
+}
+
+.login .submit-row button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--btn-primary-bg); /* Ensure this color is defined */
+    border: none;
+    border-radius: 4px;
+    color: var(--btn-primary-text); /* Ensure this color is defined */
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.login .submit-row button:hover {
+    background-color: var(--btn-primary-hover-bg); /* Ensure this color is defined */
+}
+
+/* Password Reset Link */
+.login .password-reset-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.login .password-reset-link a {
+    color: var(--link-color); /* Ensure this color is defined */
+    text-decoration: none;
+}
+
+.login .password-reset-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .login #content {
+        padding: 15px;
+    }
+
+    .login #header h1 {
+        font-size: 1.25rem;
+    }
+
+    .logo-custom {
+        width: 60px;
+        height: 60px;
+    }
+}

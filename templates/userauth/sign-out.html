@@ -1,0 +1,93 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block body_class %}custom-register{% endblock %}
+{% block content %}
+<div id="custom-signout-page" class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h2 class="mb-4">Sign Out</h2>
+                    <p class="mb-4">Are you sure you want to sign out?</p>
+                    
+                    <form action="{% url 'userauth:sign-out' %}" method="post">
+                        {% csrf_token %}
+                        <div class="d-flex justify-content-between">
+                            <!-- Sign Out Button -->
+                            <button type="submit" class="btn btn-danger btn-lg">
+                                <i class="material-icons">logout</i> Sign Out
+                            </button>
+                            <!-- Sign In Button -->
+                            <a href=
+"{% url 'userauth:sign-in' %}" class="btn btn-primary btn-lg">
+                                <i class="material-icons">login</i> Sign In
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extra_styles %}
+<style>
+#custom-signout-page .card {
+    border-radius: 1rem;
+    border: 5px solid transparent;
+    background-color: transparent;
+    border-image-source: linear-gradient(to right, #FF5733, #28A745);
+    border-image-slice: 1;
+    transition: all 0.3s ease-in-out;
+}
+#custom-signout-page .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+#custom-signout-page .card-body {
+    padding: 2rem;
+}
+#custom-signout-page .btn {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 0.5rem;
+    margin-top: 20px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+#custom-signout-page .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+#custom-signout-page .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+#custom-signout-page .btn-primary {
+    background-color: hsl(234, 100%, 50%);
+    border-color: #d9ff00;
+}
+#custom-signout-page .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+#custom-signout-page h2,
+#custom-signout-page p {
+    color: black; /* Default text color for light mode */
+}
+#custom-signout-page .btn .material-icons {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* Dark Mode Overrides */
+body.custom-register.dark-mode #custom-signout-page h2,
+body.custom-register.dark-mode #custom-signout-page p {
+    color: white; /* Text color for dark mode */
+}
+</style>
+{% endblock %}
+
+{% block extra_scripts %}
+<!-- You can include any additional JavaScript here -->
+{% endblock %}
+{% endblock %}

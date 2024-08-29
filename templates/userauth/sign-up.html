@@ -1,0 +1,336 @@
+{% extends 'dashboard/base.html' %}
+{% load userauth_filters %}
+{% block body_class %}custom-register{% endblock %}
+{% block content %}
+<div id="custom-register-page" class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="mb-4 text-center">Register</h2>
+
+                    <form id="register-form" action="{% url 'userauth:sign-up' %}" method="POST" novalidate>
+                        {% csrf_token %}
+                        <div id="form-errors"></div> <!-- Container for form errors -->
+                        
+                        <div class="form-group">
+                            <label for="{{ form.username.id_for_label }}" class="font-weight-bold">Username</label>
+                            {{ form.username|add_class:"form-control" }}
+                            {% if form.username.errors %}
+                                <div class="text-danger">{{ form.username.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="{{ form.email.id_for_label }}" class="font-weight-bold">Email Address</label>
+                            {{ form.email|add_class:"form-control" }}
+                            {% if form.email.errors %}
+                                <div class="text-danger">{{ form.email.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="{{ form.password1.id_for_label }}" class="font-weight-bold">Password</label>
+                            <div class="input-group">
+                                {{ form.password1|add_class:"form-control" }}
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i id="toggle-password1" class="material-icons">visibility</i>
+                                    </span>
+                                </div>
+                            </div>
+                            {% if form.password1.errors %}
+                                <div class="text-danger">{{ form.password1.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="{{ form.password2.id_for_label }}" class="font-weight-bold">Confirm Password</label>
+                            <div class="input-group">
+                                {{ form.password2|add_class:"form-control" }}
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i id="toggle-password2" class="material-icons">visibility</i>
+                                    </span>
+                                </div>
+                            </div>
+                            {% if form.password2.errors %}
+                                <div class="text-danger">{{ form.password2.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                           <button type="submit" class="btn btn-primary btn-sm btn-block">
+                            <span class="material-icons">login</span> Register
+                        </button>
+
+                    </form>
+
+                    <!-- Account Management Links -->
+                    <div class="text-center mt-3">
+                        <p class="mb-1">Already have an account? <a href=
+"{% url 'userauth:sign-in' %}">Sign In</a></p>
+                        <p>Forgot your password? <a href="{% url 'userauth:password_reset' %}">Reset It</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Loader HTML -->
+<div id="loader" class="loader-overlay">
+    <div class="loader"></div>
+</div>
+
+{% block extra_styles %}
+<style>
+   /* Scoped styles for the sign-in page only */
+#custom-register-page {
+    background-color: transparent;
+}
+
+/* Card styles */
+#custom-register-page .card {
+    border-radius: 1rem;
+    border: 5px solid transparent;
+    background-color: transparent;
+    border-image-source: linear-gradient(to right, #FF5733, #28A745);
+    border-image-slice: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+#custom-register-page .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#custom-register-page .card-body {
+    padding: 2rem;
+}
+
+/* Form controls */
+#custom-register-page .form-control {
+    border-radius: 0.5rem;
+    box-shadow: none;
+    margin-bottom: 1rem;
+    background-color: #f2f2f2; /* Light grey background */
+    border: 1px solid #4caf50; /* Greenish border */
+}
+
+/* Buttons */
+#custom-register-page .btn {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 0.5rem;
+    margin-top: 20px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#custom-register-page .btn-primary {
+    background-color: hsl(25, 95%, 32%);
+    border-color: #4f0833;
+}
+
+#custom-register-page .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/* Labels and text */
+#custom-register-page .form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+#custom-register-page .card-body p a {
+    color: #28A745;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#custom-register-page .card-body p a:hover {
+    text-decoration: underline;
+}
+
+#custom-register-page .text-danger {
+    font-size: 0.875rem;
+    color: red;
+}
+
+/* Dark Mode Overrides */
+body.custom-register.dark-mode #custom-register-page .card,
+body.custom-register.dark-mode #custom-register-page .card-body,
+body.custom-register.dark-mode #custom-register-page .form-control,
+body.custom-register.dark-mode #custom-register-page .btn-primary,
+body.custom-register.dark-mode #custom-register-page .card-body p a {
+    background-color: #000; /* Dark background */
+    color: white; /* Text color for dark mode */
+}
+
+body.custom-register.dark-mode #custom-register-page .form-control {
+    border: 1px solid #757879; /* Optional: Adjust border for dark mode */
+}
+
+body.custom-register.dark-mode #custom-register-page .btn-primary {
+    background-color: #0056b3; /* Darker background color */
+    border-color: #004085; /* Darker border color */
+}
+
+body.custom-register.dark-mode #custom-register-page .card-body p a {
+    color: green; /* Link color for dark mode */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #custom-register-page .card-body {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #custom-register-page .card-body {
+        padding: 1rem;
+    }
+
+    #custom-register-page .btn {
+        font-size: 12px;
+    }
+}
+
+/* Password visibility toggle */
+.input-group-text {
+    cursor: pointer;
+    background-color: transparent; /* Same as form control background to match */
+    border: 1px solid #4caf50; /* Same as form control border for consistency */
+    border-radius: 0 0.25rem 0.25rem 0; /* Match form control border-radius */
+}
+
+#custom-register-material-icons {
+    font-size: 18px; /* Adjust size to fit the input field */
+    color: #4caf50; /* Match border color or form control text color */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#custom-register-input-group-text:hover .material-icons {
+    color: #e1d604; /* Change color on hover for better UX */
+}
+
+/* Loader Styles */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure loader is above all other content */
+}
+
+.loader {
+    border: 8px solid #e83008; /* Light grey border */
+    border-top: 8px solid #770488; /* Blue border */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite; /* Spin animation */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('register-form');
+    const loader = document.getElementById('loader'); // Loader element
+
+    // Function to handle form submission
+    function handleFormSubmit(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Show the loader
+        loader.style.display = 'flex';
+
+        const formData = new FormData(form);
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', form.action, true);
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.setRequestHeader('X-CSRFToken', form.querySelector('[name="csrfmiddlewaretoken"]').value);
+
+        xhr.onload = function() {
+            // Hide the loader
+            loader.style.display = 'none';
+
+            if (xhr.status >= 200 && xhr.status < 300) {
+                const response = JSON.parse(xhr.responseText);
+
+                if (response.success) {
+                    // Redirect to the URL provided in the response
+                    window.location.href = response.redirect_url;
+                } else {
+                    // Clear previous errors
+                    const errorContainer = document.getElementById('form-errors');
+                    if (errorContainer) {
+                        errorContainer.innerHTML = '';
+                    }
+
+                    // Remove existing error messages from form fields
+                    document.querySelectorAll('.text-danger').forEach(el => el.remove());
+
+                    // Display new errors
+                    const errors = response.errors;
+                    for (const [field, fieldErrors] of Object.entries(errors)) {
+                        const fieldContainer = form.querySelector(`[name="${field}"]`).closest('.form-group');
+                        if (fieldContainer) {
+                            const errorDiv = document.createElement('div');
+                            errorDiv.className = 'text-danger';
+                            errorDiv.innerHTML = fieldErrors.join('<br>');
+                            fieldContainer.appendChild(errorDiv);
+                        }
+                    }
+                }
+            } else {
+                alert('An error occurred. Please try again.');
+            }
+        };
+
+        xhr.onerror = function() {
+            // Hide the loader
+            loader.style.display = 'none';
+            alert('An error occurred. Please try again.');
+        };
+
+        xhr.send(formData);
+    }
+
+    // Attach submit event handler to form
+    form.addEventListener('submit', handleFormSubmit);
+
+    // Toggle password visibility
+    function setupPasswordToggle(toggleId, passwordFieldName) {
+        const toggleButton = document.getElementById(toggleId);
+        const passwordField = document.querySelector(`[name="${passwordFieldName}"]`);
+
+        toggleButton.addEventListener('click', function() {
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                toggleButton.textContent = 'visibility_off'; // Use icon text for closed eye
+            } else {
+                passwordField.type = 'password';
+                toggleButton.textContent = 'visibility'; // Use icon text for open eye
+            }
+        });
+    }
+
+    setupPasswordToggle('toggle-password1', 'password1');
+    setupPasswordToggle('toggle-password2', 'password2');
+});
+
+</script>
+{% endblock %}
+{% endblock %}
